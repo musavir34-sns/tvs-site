@@ -204,6 +204,20 @@ a:focus-visible,button:focus-visible,[role=tabpanel]:focus-visible{outline:3px s
 .a11y p{margin:0;color:#C3C7CD}
 .a11y a{color:var(--ink)}
 footer a{color:var(--muted)}
+
+.cform{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;max-width:900px}
+.cform h3{grid-column:1/-1;font-size:36px}
+.cform .full{grid-column:1/-1}
+.cform label{display:grid;gap:6px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#B4B9C1}
+.cform input,.cform textarea{font:inherit;font-size:16px;letter-spacing:0;text-transform:none;color:var(--ink);background:var(--panel);border:1px solid #4A505A;padding:12px 14px;border-radius:0;width:100%}
+.cform input:focus-visible,.cform textarea:focus-visible{outline:3px solid #7FA2FF;outline-offset:2px}
+.cform textarea{min-height:150px;resize:vertical}
+.cform p{margin:0;color:#C3C7CD}
+.cform .small{font-size:13px;color:var(--muted)}
+.cform button{cursor:pointer;justify-self:start;font-family:inherit}
+.cform button[disabled]{opacity:.6;cursor:wait}
+.cform .st{min-height:1.6em;color:var(--ink);font-weight:600}
+@media (max-width:700px){.cform{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -603,6 +617,24 @@ footer a{color:var(--muted)}
         <dt>Instagram</dt><dd><a href="https://www.instagram.com/tvsworkhouse/">@tvsworkhouse</a></dd>
       </dl>
     </div>
+    <div class="wrap">
+      <form id="cform" class="cform" action="https://api.web3forms.com/submit" method="POST" aria-labelledby="cform-h" data-sending="Gönderiliyor…" data-ok="Teşekkürler, mesajınız bize ulaştı. En kısa sürede dönüş yapacağız." data-err="Mesaj gönderilemedi. Lütfen tekrar deneyin ya da info@tvs.com.tr adresine yazın.">
+        <h3 id="cform-h">Bize yazın</h3>
+        <p class="full">Formu doldurun; mesajınız doğrudan yönetimimize ulaşsın. <span class="small">* Zorunlu alanlar</span></p>
+        <input type="hidden" name="access_key" value="2d1d8c4b-fac5-416b-812b-4984e2d72a34">
+        <input type="hidden" name="subject" value="tvs.com.tr iletişim formu (TR)">
+        <input type="hidden" name="from_name" value="tvs.com.tr">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label>Ad soyad<span aria-hidden="true"> *</span><input type="text" name="name" required autocomplete="name"></label>
+        <label>E-posta<span aria-hidden="true"> *</span><input type="email" name="email" required autocomplete="email" dir="ltr"></label>
+        <label>Telefon<input type="tel" name="phone" autocomplete="tel" dir="ltr"></label>
+        <label>Firma<input type="text" name="company" autocomplete="organization"></label>
+        <label class="full">Mesaj<span aria-hidden="true"> *</span><textarea name="message" required></textarea></label>
+        <p class="full small">Gönderdiğiniz bilgiler yalnızca talebinize yanıt vermek amacıyla TVS Prodüksiyon Hizmetleri Tic. A.Ş. tarafından işlenir ve yurt dışında bulunan form hizmeti sağlayıcısı (Web3Forms) aracılığıyla e-posta ile iletilir. 6698 sayılı KVKK kapsamındaki haklarınız için info@tvs.com.tr adresine yazabilirsiniz.</p>
+        <button type="submit" class="btn solid">Gönder</button>
+        <p class="st full" role="status" aria-live="polite"></p>
+      </form>
+    </div>
   </section>
   <section id="erisilebilirlik" aria-labelledby="a11y-h">
     <div class="wrap">
@@ -645,6 +677,20 @@ footer a{color:var(--muted)}
       if(n===null)return;
       e.preventDefault();n=(n+tabs.length)%tabs.length;sel(tabs[n]);tabs[n].focus();
     });
+  });
+})();
+
+(function(){
+  var f=document.getElementById('cform');if(!f||!window.fetch)return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var st=f.querySelector('.st'),b=f.querySelector('button');
+    b.disabled=true;st.textContent=f.getAttribute('data-sending');
+    fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
+      .then(function(r){return r.json();})
+      .then(function(j){if(j&&j.success){f.reset();st.textContent=f.getAttribute('data-ok');}else{st.textContent=f.getAttribute('data-err');}})
+      .catch(function(){st.textContent=f.getAttribute('data-err');})
+      .then(function(){b.disabled=false;});
   });
 })();
 </script>
