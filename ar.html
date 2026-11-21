@@ -35,7 +35,6 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--floor);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
 img{max-width:100%;display:block}
 a{color:inherit}
-a:focus-visible,button:focus-visible{outline:2px solid var(--sig-b);outline-offset:3px}
 .wrap{width:var(--wrap);margin-inline:auto}
 h1,h2,h3{font-family:var(--display);font-weight:900;line-height:.95;letter-spacing:.005em;text-wrap:balance;margin:0;text-transform:uppercase}
 .mono{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
@@ -206,9 +205,24 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
 [dir=rtl] .tl li{padding:20px 0 6px 18px}
 [dir=rtl] .chips span{font-weight:700}
 [dir=rtl] .chips span:not(:last-child)::after{content:" ،"}
+
+.atla{position:absolute;left:12px;top:-80px;z-index:200;background:var(--ink);color:var(--floor);padding:12px 18px;font-weight:600;text-decoration:none}
+.atla:focus{top:8px}
+[dir=rtl] .atla{left:auto;right:12px}
+main:focus{outline:none}
+a:focus-visible,button:focus-visible,[role=tabpanel]:focus-visible{outline:3px solid #7FA2FF;outline-offset:3px}
+.chips span:not(:last-child)::after{content:" /";content:" /" / ""}
+.a11y{background:var(--panel);border:1px solid var(--line);border-inline-start:4px solid var(--sig-g);padding:32px}
+.a11y ul{list-style:none;margin:24px 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px 28px}
+.a11y li{color:#C3C7CD;font-size:15.5px}
+.a11y li b{display:block;color:var(--ink);font-weight:600;font-size:16px}
+.a11y p{margin:0;color:#C3C7CD}
+.a11y a{color:var(--ink)}
+footer a{color:var(--muted)}
 </style>
 </head>
 <body>
+<a class="atla" href="#top">انتقل إلى المحتوى</a>
 
 <header class="top">
   <div class="wrap">
@@ -223,17 +237,17 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
       <a href="#grup">شركات المجموعة</a>
       <a href="#iletisim">اتصل بنا</a>
     </nav>
-    <div class="lang" aria-label="اللغة">
-      <a href="index.html" lang="tr" hreflang="tr">TR</a>
-      <a href="en.html" lang="en" hreflang="en">EN</a>
-      <a href="#top" aria-current="true" lang="ar">AR</a>
-      <a href="fa.html" lang="fa" hreflang="fa">FA</a>
-      <a href="es.html" lang="es" hreflang="es">ES</a>
-    </div>
+    <nav class="lang" aria-label="اللغة">
+      <a href="index.html" lang="tr" hreflang="tr" aria-label="Türkçe">TR</a>
+      <a href="en.html" lang="en" hreflang="en" aria-label="English">EN</a>
+      <a href="#top" aria-current="true" lang="ar" aria-label="العربية">AR</a>
+      <a href="fa.html" lang="fa" hreflang="fa" aria-label="فارسی">FA</a>
+      <a href="es.html" lang="es" hreflang="es" aria-label="Español">ES</a>
+    </nav>
   </div>
 </header>
 
-<main id="top">
+<main id="top" tabindex="-1">
   <div class="hero">
     <div class="bg"><img src="assets/atv-yari-yariya.jpg" alt="ديكور استوديو صُمّم لبرنامج المسابقات Yarı Yarıya على قناة ATV"></div>
     <div class="wrap">
@@ -253,7 +267,7 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
       <div class="fact"><b>8</b><span>دول نفّذنا فيها مشاريع: تركيا، ليبيا، العراق، قطر، إيران، فرنسا، روسيا، الولايات المتحدة</span></div>
       <div class="fact"><b>2</b><span>عمليات بث لكأس العالم FIFA (2018، 2022)</span></div>
       <div class="fact"><b>1</b><span>متحف وطني، ليبيا</span></div>
-      <div class="fact"><b>24</b><span>قناة ضمن قائمة عملائنا، منها TRT وATV وShow TV وKanal D وbeIN والجزيرة</span></div>
+      <div class="fact"><b>25</b><span>قناة ضمن قائمة عملائنا، منها TRT وATV وShow TV وKanal D وbeIN والجزيرة</span></div>
     </div>
   </div>
 
@@ -405,7 +419,7 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
         <article class="slate">
           <div class="row"><span class="mono">فرنسا</span><span class="status">استوديو</span></div>
           <h3 lang="en">Equidia</h3>
-          <p>تصميم ديكور استوديو بث.</p>
+          <p>تصميم ديكور استوديو بث وعربة بث خارجي مجهزة بالكامل.</p>
         </article>
         <article class="slate">
           <div class="row"><span class="mono">الولايات المتحدة · أوروبا</span><span class="status">ديكور · مسرح</span></div>
@@ -415,7 +429,7 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
         <article class="slate">
           <div class="row"><span class="mono">فرنسا · ليبيا</span><span class="status">عربات بث</span></div>
           <h3>عربات البث الخارجي</h3>
-          <p>تصميم وتصنيع عربات البث الخارجي في عدة دول.</p>
+          <p>عربات بث خارجي مجهزة بالكامل لقناتي Equidia وHC Racing في فرنسا ولقناة Salam TV في ليبيا: التصميم والتصنيع والتسليم.</p>
         </article>
         <article class="slate">
           <div class="row"><span class="mono">التعليم</span><span class="status">استوديو</span></div>
@@ -473,7 +487,7 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
         <button role="tab" id="t-prog" aria-selected="false" aria-controls="p-prog">البرامج</button>
         <button role="tab" id="t-ev" aria-selected="false" aria-controls="p-ev">الفعاليات والمسارح</button>
       </div>
-      <div class="grid" id="p-game" role="tabpanel" aria-labelledby="t-game">
+      <div class="grid" id="p-game" role="tabpanel" aria-labelledby="t-game" tabindex="0">
         <figure class="w4"><img src="assets/atv-yari-yariya.jpg" alt="استوديو Yarı Yarıya" loading="lazy"><figcaption>ATV · Yarı Yarıya</figcaption></figure>
         <figure><img src="assets/tv8-o-ses-detay.jpg" alt="تفاصيل استوديو The Voice Türkiye" loading="lazy"><figcaption>TV8 · The Voice Türkiye</figcaption></figure>
         <figure class="w3"><img src="assets/tv8-o-ses-turkiye.jpg" alt="استوديو The Voice Türkiye" loading="lazy"><figcaption>TV8 · The Voice Türkiye</figcaption></figure>
@@ -481,13 +495,13 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
         <figure class="w3"><img src="assets/trt-altin-petek-2.jpg" alt="استوديو Altın Petek" loading="lazy"><figcaption>TRT · Altın Petek</figcaption></figure>
         <figure class="w3"><img src="assets/trt-altin-petek-1.jpg" alt="استوديو Altın Petek، تصميم بديل" loading="lazy"><figcaption>TRT · Altın Petek</figcaption></figure>
       </div>
-      <div class="grid" id="p-news" role="tabpanel" aria-labelledby="t-news" hidden>
+      <div class="grid" id="p-news" role="tabpanel" aria-labelledby="t-news" hidden tabindex="0">
         <figure class="w4"><img src="assets/haberturk-haber-1.jpg" alt="تصميم استوديو أخبار" loading="lazy"><figcaption>Habertürk · استوديو أخبار</figcaption></figure>
         <figure><img src="assets/kanal24-haber.jpg" alt="استوديو أخبار Kanal 24" loading="lazy"><figcaption>Kanal 24</figcaption></figure>
         <figure class="w3"><img src="assets/haberturk-haber-2.jpg" alt="استوديو أخبار، زاوية ثانية" loading="lazy"><figcaption>Habertürk · استوديو أخبار</figcaption></figure>
         <figure class="w3"><img src="assets/spor-haber.jpg" alt="استوديو أخبار رياضية" loading="lazy"><figcaption>استوديو أخبار رياضية</figcaption></figure>
       </div>
-      <div class="grid" id="p-prog" role="tabpanel" aria-labelledby="t-prog" hidden>
+      <div class="grid" id="p-prog" role="tabpanel" aria-labelledby="t-prog" hidden tabindex="0">
         <figure class="w4"><img src="assets/bein-gurme-1.jpg" alt="تصميم استوديو beIN Gurme" loading="lazy"><figcaption>beIN Gurme · تصميم الاستوديو</figcaption></figure>
         <figure><img src="assets/bein-gurme-plan.jpg" alt="مخطط استوديو beIN Gurme" loading="lazy"><figcaption>beIN Gurme · المخطط</figcaption></figure>
         <figure class="w3"><img src="assets/bein-gurme-2.jpg" alt="تصميم استوديو beIN Gurme" loading="lazy"><figcaption>beIN Gurme · تصميم الاستوديو</figcaption></figure>
@@ -496,7 +510,7 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
         <figure><img src="assets/program-studyo-2.jpg" alt="استوديو برامج" loading="lazy"><figcaption>استوديو برامج</figcaption></figure>
         <figure class="w4" style="grid-column:span 6"><img src="assets/program-studyo-1.jpg" alt="استوديو برنامج حواري" loading="lazy"><figcaption>استوديو برنامج حواري</figcaption></figure>
       </div>
-      <div class="grid" id="p-ev" role="tabpanel" aria-labelledby="t-ev" hidden>
+      <div class="grid" id="p-ev" role="tabpanel" aria-labelledby="t-ev" hidden tabindex="0">
         <figure class="w4"><img src="assets/atv-bir-sarkisin-sen.jpg" alt="مسرح Bir Şarkısın Sen" loading="lazy"><figcaption>ATV · Bir Şarkısın Sen</figcaption></figure>
         <figure><img src="assets/o-ses-turkiye-sahne.jpg" alt="مسرح The Voice Türkiye" loading="lazy"><figcaption>Show TV · The Voice Türkiye</figcaption></figure>
         <figure class="w3"><img src="assets/buzda-dans.jpg" alt="حلبة الجليد ومسرح Buzda Dans" loading="lazy"><figcaption>Show TV · الرقص على الجليد</figcaption></figure>
@@ -517,11 +531,11 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
       <div class="refs">
         <div>
           <h3>قنوات البث</h3>
-          <div class="chips"><span>TRT</span><span>ATV</span><span lang="en">TJK TV</span><span>Show TV</span><span>Kanal D</span><span>Star TV</span><span>Fox TV</span><span>TV8</span><span>Habertürk</span><span>Kanal 24</span><span>Lig TV</span><span>360</span><span>TürkMax</span><span>TGRT</span><span>Exxen</span><span>NOW</span><span lang="en">Salam TV</span><span lang="en">beIN Sports</span><span lang="en">الجزيرة</span><span lang="en">Equidia</span><span>BRT</span><span lang="en">S Sport</span><span lang="en">GEM TV</span><span lang="ar">ليبيا الأحرار</span></div>
+          <div class="chips" role="list"><span role="listitem">TRT</span><span role="listitem">ATV</span><span role="listitem" lang="en">TJK TV</span><span role="listitem">Show TV</span><span role="listitem">Kanal D</span><span role="listitem">Star TV</span><span role="listitem">Fox TV</span><span role="listitem">TV8</span><span role="listitem">Habertürk</span><span role="listitem">Kanal 24</span><span role="listitem">Lig TV</span><span role="listitem">360</span><span role="listitem">TürkMax</span><span role="listitem">TGRT</span><span role="listitem">Exxen</span><span role="listitem">NOW</span><span role="listitem" lang="en">Salam TV</span><span role="listitem" lang="en">beIN Sports</span><span role="listitem" lang="en">الجزيرة</span><span role="listitem" lang="en">Equidia</span><span role="listitem">BRT</span><span role="listitem" lang="en">S Sport</span><span role="listitem" lang="en">GEM TV</span><span role="listitem" lang="ar">ليبيا الأحرار</span><span role="listitem" lang="en">HC Racing</span></div>
         </div>
         <div>
           <h3>فعاليات وبرامج</h3>
-          <div class="chips"><span>Lingo</span><span>Kumbara</span><span>Yetenek Sizsiniz</span><span>Yarı Yarıya</span><span>Kazan Kazan</span><span>Gelinim Mutfakta</span><span>Şef Akademi</span><span lang="en">X Factor</span><span>Şarkı Söylemek Lazım</span><span>جوائز الفراشة الذهبية</span><span>جوائز أفيفة جاله للمسرح</span><span>The Voice Türkiye</span><span>Var mısın Yok musun</span><span>Çarkıfelek</span><span>Buzda Dans</span><span>Bu Tarz Benim</span><span>Para Odası</span><span>Aileler Yarışıyor</span><span>Kapanmadan Kazan</span><span>Bir Şarkısın Sen</span><span>Güven Bana</span><span>Canlı Para</span><span>Ben Bilmem Eşim Bilir</span><span>Ben Buradan Atlarım</span><span>Biri Bana Gelsin</span><span>إطلاق مرسيدس</span><span>إطلاق Beymen</span><span>Cebit</span><span>إسطنبول عاصمة الرياضة الأوروبية</span><span>طواف تركيا الرئاسي للدراجات</span></div>
+          <div class="chips" role="list"><span role="listitem">Lingo</span><span role="listitem">Kumbara</span><span role="listitem">Yetenek Sizsiniz</span><span role="listitem">Yarı Yarıya</span><span role="listitem">Kazan Kazan</span><span role="listitem">Gelinim Mutfakta</span><span role="listitem">Şef Akademi</span><span role="listitem" lang="en">X Factor</span><span role="listitem">Şarkı Söylemek Lazım</span><span role="listitem">جوائز الفراشة الذهبية</span><span role="listitem">جوائز أفيفة جاله للمسرح</span><span role="listitem">The Voice Türkiye</span><span role="listitem">Var mısın Yok musun</span><span role="listitem">Çarkıfelek</span><span role="listitem">Buzda Dans</span><span role="listitem">Bu Tarz Benim</span><span role="listitem">Para Odası</span><span role="listitem">Aileler Yarışıyor</span><span role="listitem">Kapanmadan Kazan</span><span role="listitem">Bir Şarkısın Sen</span><span role="listitem">Güven Bana</span><span role="listitem">Canlı Para</span><span role="listitem">Ben Bilmem Eşim Bilir</span><span role="listitem">Ben Buradan Atlarım</span><span role="listitem">Biri Bana Gelsin</span><span role="listitem">إطلاق مرسيدس</span><span role="listitem">إطلاق Beymen</span><span role="listitem">Cebit</span><span role="listitem">إسطنبول عاصمة الرياضة الأوروبية</span><span role="listitem">طواف تركيا الرئاسي للدراجات</span></div>
         </div>
       </div>
     </div>
@@ -576,23 +590,46 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
       </dl>
     </div>
   </section>
+  <section id="erisilebilirlik" aria-labelledby="a11y-h">
+    <div class="wrap">
+      <div class="a11y">
+        <p class="mono">إمكانية الوصول</p>
+        <h2 id="a11y-h" style="margin-top:10px">موقع للجميع</h2>
+        <p style="margin-top:14px">نريد أن يتمكن الجميع، بمن فيهم المكفوفون وضعاف البصر، من استخدام هذا الموقع بسهولة. هدفنا هو المستوى AA من إرشادات الوصول إلى محتوى الويب (WCAG) 2.2 الصادرة عن W3C.</p>
+        <ul><li><b>قارئات الشاشة</b>بنية عناوين واضحة، وصور موصوفة، وقوائم وروابط مسمّاة.</li><li><b>رابط «انتقل إلى المحتوى»</b>اضغط مفتاح Tab مرة واحدة بعد فتح الصفحة لتتجاوز القائمة وتنتقل مباشرة إلى المحتوى.</li><li><b>لوحة المفاتيح</b>تعمل القوائم وتبويبات معرض الأعمال دون فأرة، ويمكن التنقل بين التبويبات بمفاتيح الأسهم. ويظهر العنصر المحدد بإطار واضح.</li><li><b>التباين والتكبير</b>نص عالي التباين على خلفية داكنة، ولا يضيع أي محتوى عند تكبير الصفحة إلى 200%.</li><li><b>الحركة</b>إذا فعّلت خيار «تقليل الحركة» في نظام التشغيل، تتوقف العناصر المتحركة.</li><li><b>خمس لغات</b>تحمل النسخ التركية والإنجليزية والعربية والفارسية والإسبانية وسوم اللغة واتجاه الكتابة الصحيحة، فيقرأ قارئ الشاشة كل نسخة بنطقها الصحيح.</li></ul>
+        <p>إذا واجهت جزءاً لا يمكنك قراءته أو الوصول إليه، أخبرنا وسنرسل إليك المحتوى بصيغة تناسبك: <a href="mailto:info@tvs.com.tr">info@tvs.com.tr</a> · <a href="tel:4448887">444 88 87</a></p>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
   <div class="wrap">
     <p>© 2026 TVS Prodüksiyon Hizmetleri Tic. A.Ş. · TVS Group</p>
+    <p><a href="#erisilebilirlik">إمكانية الوصول</a></p>
   </div>
 </footer>
 
 <script>
 (function(){
   var tabs=[].slice.call(document.querySelectorAll('.tabs [role=tab]'));
-  tabs.forEach(function(t){
-    t.addEventListener('click',function(){
-      tabs.forEach(function(o){
-        var on=o===t;o.setAttribute('aria-selected',on);
-        document.getElementById(o.getAttribute('aria-controls')).hidden=!on;
-      });
+  function sel(t){
+    tabs.forEach(function(o){
+      var on=o===t;o.setAttribute('aria-selected',on);o.tabIndex=on?0:-1;
+      document.getElementById(o.getAttribute('aria-controls')).hidden=!on;
+    });
+  }
+  tabs.forEach(function(t,i){
+    t.tabIndex=t.getAttribute('aria-selected')==='true'?0:-1;
+    t.addEventListener('click',function(){sel(t);});
+    t.addEventListener('keydown',function(e){
+      var rtl=document.documentElement.dir==='rtl',n=null;
+      if(e.key==='ArrowRight')n=i+(rtl?-1:1);
+      else if(e.key==='ArrowLeft')n=i+(rtl?1:-1);
+      else if(e.key==='Home')n=0;
+      else if(e.key==='End')n=tabs.length-1;
+      if(n===null)return;
+      e.preventDefault();n=(n+tabs.length)%tabs.length;sel(tabs[n]);tabs[n].focus();
     });
   });
 })();
