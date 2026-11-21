@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TVS Group</title>
+<meta name="description" content="مجموعة TVS: استوديوهات تلفزيونية، كاميرات، غرف تحكم، صوت، إضاءة وتصميم ديكور. TVS Production وTVS WorkHouse. إسطنبول، تركيا.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: a blacked-out studio floor. The set photos are the light source; the T·V·S signal colours (R, G, B) mark the three things TVS does. Slates and timecode-style labels carry the facts. */
+:root{
+  --floor:#0A0B0D;
+  --panel:#14161A;
+  --line:#262A31;
+  --ink:#EEF0F2;
+  --muted:#8E949E;
+  --sig-r:#FF3B2F;
+  --sig-g:#2ED15F;
+  --sig-b:#2F63FF;
+  --display:"Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body:"IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+  --mono:"IBM Plex Mono", Consolas, monospace;
+  --wrap:min(1200px, 100% - 40px);
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--floor);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+img{max-width:100%;display:block}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--sig-b);outline-offset:3px}
+.wrap{width:var(--wrap);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:900;line-height:.95;letter-spacing:.005em;text-wrap:balance;margin:0;text-transform:uppercase}
+.mono{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+/* Logo: T·V·S in the signal colours */
+.logo{display:inline-flex;align-items:baseline;gap:.18em;font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:30px;text-decoration:none;line-height:1}
+.logo .r{color:var(--sig-r)}.logo .g{color:var(--sig-g)}.logo .b{color:var(--sig-b)}
+.logo i{width:.18em;height:.18em;border-radius:50%;background:#6B6F76;display:inline-block;transform:translateY(-.28em)}
+.logo small{font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--muted);margin-left:.6em;font-weight:400}
+
+/* Header */
+header.top{position:sticky;top:0;z-index:20;background:rgba(10,11,13,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px;flex-wrap:wrap}
+nav.main{display:flex;gap:22px;flex-wrap:wrap}
+nav.main a{text-decoration:none;font-size:14px;font-weight:500;color:#C9CDD3}
+nav.main a:hover{color:var(--ink)}
+.lang{display:flex;gap:4px;font-family:var(--mono);font-size:12px}
+.lang a,.lang span{padding:4px 8px;border:1px solid var(--line);text-decoration:none}
+.lang a[aria-current]{background:var(--ink);color:var(--floor);border-color:var(--ink)}
+.lang span{color:#5A5F68}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .bg{position:absolute;inset:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--floor) 8%,rgba(10,11,13,.6) 55%,rgba(10,11,13,.15)),linear-gradient(0deg,var(--floor),transparent 40%)}
+.hero .wrap{position:relative;padding:96px 0 72px;display:grid;gap:28px}
+.tally{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.2em;border:1px solid var(--sig-r);color:var(--sig-r);padding:6px 12px;width:max-content}
+.tally::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--sig-r);box-shadow:0 0 12px var(--sig-r);animation:tally 2.4s ease-in-out infinite}
+@keyframes tally{0%,100%{opacity:1}50%{opacity:.35}}
+.hero h1{font-size:clamp(54px,9vw,128px);max-width:11ch}
+.hero h1 em{font-style:normal;color:transparent;-webkit-text-stroke:2px var(--ink)}
+.hero p.lede{max-width:56ch;font-size:19px;color:#D3D6DB;margin:0}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 22px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid var(--ink)}
+.btn.solid{background:var(--ink);color:var(--floor)}
+.btn:hover{background:var(--ink);color:var(--floor)}
+/* RGB signal bar */
+.signal{display:grid;grid-template-columns:1fr 1fr 1fr;height:6px}
+.signal span:nth-child(1){background:var(--sig-r)}.signal span:nth-child(2){background:var(--sig-g)}.signal span:nth-child(3){background:var(--sig-b)}
+
+/* Facts */
+.facts{border-bottom:1px solid var(--line)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.fact{padding:30px 22px;border-left:1px solid var(--line)}
+.fact:first-child{border-left:0;padding-left:0}
+.fact b{display:block;font-family:var(--display);font-weight:900;font-size:52px;line-height:1}
+.fact span{font-size:14px;color:var(--muted)}
+@media (max-width:760px){.facts .wrap{grid-template-columns:1fr 1fr}.fact{padding:22px 14px}.fact:nth-child(3){border-left:0;padding-left:0}}
+
+section{padding:88px 0;border-bottom:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:200px 1fr;gap:24px;margin-bottom:44px;align-items:end}
+.sec-head h2{font-size:clamp(40px,6vw,72px)}
+.sec-head p{grid-column:2;max-width:62ch;color:#C3C7CD;margin:0}
+@media (max-width:760px){.sec-head{grid-template-columns:1fr}.sec-head p{grid-column:1}}
+
+/* On air now */
+.onair{padding:64px 0}
+.live-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.live{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:22px;border:1px solid var(--line);border-left:4px solid var(--sig-r);background:var(--panel)}
+.live h3{font-size:36px}
+.live p{margin:6px 0 0}
+.live-list{align-items:end}
+.live.has-img img{grid-column:1 / -1;width:calc(100% + 44px);margin:-22px -22px 6px;aspect-ratio:16/9;object-fit:cover;max-width:none}
+.live .dot{width:12px;height:12px;border-radius:50%;background:var(--sig-r);box-shadow:0 0 14px var(--sig-r);animation:tally 2.4s ease-in-out infinite}
+@media (max-width:860px){.live-list{grid-template-columns:1fr}}
+
+/* Divisions */
+.divs{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.div{background:var(--panel);border:1px solid var(--line);display:grid;grid-template-rows:auto 1fr}
+.div figure{margin:0;aspect-ratio:16/9;overflow:hidden}
+.div figure img{width:100%;height:100%;object-fit:cover}
+.div .body{padding:28px;display:grid;gap:14px;align-content:start;border-top:4px solid var(--c)}
+.div h3{font-size:42px}
+.div ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.div li{font-size:13px;border:1px solid var(--line);padding:5px 10px;color:#D3D6DB}
+.div p{margin:0;color:#C3C7CD}
+@media (max-width:860px){.divs{grid-template-columns:1fr}}
+
+/* International slates */
+.slates{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.slate{border:1px solid var(--line);background:var(--panel);padding:22px;display:grid;gap:10px;align-content:start;position:relative}
+.slate::before{content:"";position:absolute;inset:0 0 auto 0;height:10px;background:repeating-linear-gradient(-45deg,#E9EBEE 0 12px,#14161A 12px 24px)}
+.slate .row{display:flex;justify-content:space-between;gap:10px;margin-top:8px}
+.slate h3{font-size:30px}
+.slate p{margin:0;color:#C3C7CD;font-size:15px}
+.status{font-family:var(--mono);font-size:11px;letter-spacing:.12em;padding:3px 8px;border:1px solid var(--line);white-space:nowrap}
+.status.live{border-color:var(--sig-r);color:var(--sig-r)}
+.slate.pending{border-style:dashed;background:transparent}
+.slate.pending p{color:var(--muted)}
+
+.subhead{font-size:30px;margin:48px 0 18px;color:var(--muted)}
+/* WorkHouse */
+.wh{background:linear-gradient(180deg,#0E1220,var(--floor))}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:none}
+.steps li{border-top:4px solid var(--sig-b);background:var(--panel);padding:22px;display:grid;gap:8px;align-content:start}
+.steps b{font-family:var(--mono);font-weight:500;color:var(--sig-b);font-size:13px;letter-spacing:.1em}
+.steps h3{font-size:30px}
+.steps p{margin:0;color:#C3C7CD;font-size:15px}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+/* Portfolio */
+.tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.tabs button{font:600 14px var(--body);background:transparent;color:#C9CDD3;border:1px solid var(--line);padding:10px 18px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--floor);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.grid figure{margin:0;position:relative;overflow:hidden;background:var(--panel);grid-column:span 2}
+.grid figure.w3{grid-column:span 3}
+.grid figure.w4{grid-column:span 4}
+.grid img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/10;transition:transform .5s ease}
+.grid figure:hover img{transform:scale(1.03)}
+.grid figcaption{position:absolute;left:0;bottom:0;right:0;padding:26px 12px 10px;background:linear-gradient(0deg,rgba(0,0,0,.85),transparent);font-family:var(--mono);font-size:12px;letter-spacing:.06em}
+.grid[hidden]{display:none}
+@media (max-width:760px){.grid{grid-template-columns:1fr 1fr}.grid figure,.grid figure.w3,.grid figure.w4{grid-column:span 2}}
+
+/* References */
+.refs{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.refs h3{font-size:24px;margin-bottom:14px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px 10px}
+.chips span{font-family:var(--display);font-weight:700;font-size:24px;text-transform:uppercase;color:#D9DCE0;padding:2px 0}
+.chips span:not(:last-child)::after{content:" /";color:#454A52}
+@media (max-width:760px){.refs{grid-template-columns:1fr}}
+
+/* Group */
+.group{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.co{border:1px solid var(--line);padding:28px;display:grid;gap:10px;text-decoration:none;background:var(--panel)}
+.co:hover{border-color:#5A5F68}
+.co h3{font-size:36px}
+.co p{margin:0;color:#C3C7CD}
+.co .mono{color:var(--ink)}
+@media (max-width:960px){.group{grid-template-columns:1fr}}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
+.contact dl{margin:0;display:grid;grid-template-columns:120px 1fr;gap:14px 20px}
+.contact dt{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.contact dd{margin:0}
+.todo{color:#FFB547;font-family:var(--mono);font-size:13px}
+@media (max-width:760px){.contact{grid-template-columns:1fr}.contact dl{grid-template-columns:1fr}}
+
+footer{padding:36px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer p{margin:0;font-size:13px;color:var(--muted)}
+.draft{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:#FFB547;border:1px solid #FFB547;padding:3px 8px}
+
+/* RTL overrides */
+:root{--body:"IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;--display:"IBM Plex Sans Arabic", Tahoma, sans-serif}
+[dir=rtl] h1,[dir=rtl] h2,[dir=rtl] h3{font-weight:800;letter-spacing:0;line-height:1.25}
+[dir=rtl] .hero h1{font-size:clamp(40px,6.5vw,88px);max-width:14ch}
+[dir=rtl] .mono{letter-spacing:0;font-family:"IBM Plex Sans Arabic", Tahoma, sans-serif;font-size:14px}
+[dir=rtl] .logo,[dir=rtl] .lang{direction:ltr}
+[dir=rtl] .hero .bg::after{background:linear-gradient(270deg,var(--floor) 8%,rgba(10,11,13,.6) 55%,rgba(10,11,13,.15)),linear-gradient(0deg,var(--floor),transparent 40%)}
+[dir=rtl] .fact{border-left:0;border-right:1px solid var(--line)}
+[dir=rtl] .fact:first-child{border-right:0;padding-left:22px;padding-right:0}
+[dir=rtl] .live{border-left:1px solid var(--line);border-right:4px solid var(--sig-r)}
+[dir=rtl] .chips span{font-weight:700}
+[dir=rtl] .chips span:not(:last-child)::after{content:" ،"}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="الصفحة الرئيسية لمجموعة TVS"><span class="r">T</span><i></i><span class="g">V</span><i></i><span class="b">S</span><small>GROUP</small></a>
+    <nav class="main" aria-label="القائمة الرئيسية">
+      <a href="#yayinda">على الهواء</a>
+      <a href="#hizmetler">الخدمات</a>
+      <a href="#uluslararasi">دولياً</a>
+      <a href="#workhouse">WorkHouse</a>
+      <a href="#portfolyo">أعمالنا</a>
+      <a href="#referanslar">العملاء</a>
+      <a href="#grup">شركات المجموعة</a>
+      <a href="#iletisim">اتصل بنا</a>
+    </nav>
+    <div class="lang" aria-label="اللغة">
+      <a href="index.html" lang="tr" hreflang="tr">TR</a>
+      <a href="en.html" lang="en" hreflang="en">EN</a>
+      <a href="#top" aria-current="true" lang="ar">AR</a>
+      <a href="fa.html" lang="fa" hreflang="fa">FA</a>
+      <a href="es.html" lang="es" hreflang="es">ES</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="bg"><img src="assets/atv-yari-yariya.jpg" alt="ديكور استوديو صُمّم لبرنامج المسابقات Yarı Yarıya على قناة ATV"></div>
+    <div class="wrap">
+      <div class="tally">على الهواء</div>
+      <h1>نحن نبني <em>الاستوديوهات</em> التي تراها على الشاشة</h1>
+      <p class="lede">استوديوهات، كاميرات، غرف تحكم، صوت، إضاءة، شاشات LED وديكور: كل ما يحتاجه البرنامج التلفزيوني، من الرسم الأول حتى البث المباشر، بفريق واحد. من إسطنبول إلى الدوحة، ومن طرابلس إلى دهوك، ومن موسكو إلى فرنسا.</p>
+      <div class="cta">
+        <a class="btn solid" href="#portfolyo">تصفّح أعمالنا</a>
+        <a class="btn" href="#iletisim">لنتحدث عن مشروعك</a>
+      </div>
+    </div>
+    <div class="signal" aria-hidden="true"><span></span><span></span><span></span></div>
+  </div>
+
+  <div class="facts" aria-label="TVS بالأرقام">
+    <div class="wrap">
+      <div class="fact"><b>8</b><span>دول نفّذنا فيها مشاريع: تركيا، ليبيا، العراق، قطر، إيران، فرنسا، روسيا، الولايات المتحدة</span></div>
+      <div class="fact"><b>2</b><span>عمليات بث لكأس العالم FIFA (2018، 2022)</span></div>
+      <div class="fact"><b>1</b><span>متحف وطني، ليبيا</span></div>
+      <div class="fact"><b>20</b><span>قناة ضمن قائمة عملائنا، منها TRT وATV وShow TV وKanal D وbeIN والجزيرة</span></div>
+    </div>
+  </div>
+
+  <section id="yayinda" class="onair">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="mono" style="grid-column:auto">هذا الموسم</p>
+        <h2>على الهواء الآن</h2>
+        <p>برامج تُعرض حالياً، تُصوَّر في استوديوهاتنا ويوصلها فريقنا إلى البث.</p>
+      </div>
+      <div class="live-list">
+        <article class="live has-img">
+          <img src="assets/trt1-lingo.jpg" alt="استوديو برنامج المسابقات Lingo على TRT 1، إسطنبول" loading="lazy">
+          <span class="dot" aria-hidden="true"></span>
+          <div><h3>Lingo</h3><p class="mono">TRT 1 · استوديوهات كاغيتهانة</p></div>
+          <span class="status live">على الهواء</span>
+        </article>
+        <article class="live has-img">
+          <img src="assets/now-kumbara.jpg" alt="استوديو برنامج المسابقات Kumbara على NOW، إسطنبول" loading="lazy">
+          <span class="dot" aria-hidden="true"></span>
+          <div><h3>Kumbara</h3><p class="mono">NOW · استوديوهات كاغيتهانة</p></div>
+          <span class="status live">على الهواء</span>
+        </article>
+        <article class="live">
+          <span class="dot" aria-hidden="true"></span>
+          <div><h3 lang="en">Salam TV</h3><p class="mono">ليبيا</p></div>
+          <span class="status live">على الهواء</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="hizmetler">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="mono" style="grid-column:auto;color:var(--muted)">قسمان</p>
+        <h2>الإنتاج والتصميم تحت سقف واحد</h2>
+        <p>الفريق الذي يصمّم الديكور هو نفسه الذي يبنيه ويضيئه ويوصله إلى البث. لا مقاولين من الباطن، والمسؤولية في جهة واحدة.</p>
+      </div>
+      <div class="divs">
+        <article class="div" style="--c:var(--sig-r)">
+          <figure><img src="assets/trt-gulbence.jpg" alt="استوديو برامج بُني لصالح TRT" loading="lazy"></figure>
+          <div class="body">
+            <p class="mono">TVS Production / TVS Studios</p>
+            <h3>الاستوديو والبث</h3>
+            <p>في استوديونا في إسطنبول أو في موقعكم: إنتاج متكامل بالكاميرات وغرفة التحكم والإضاءة.</p>
+            <ul><li>تأجير الاستوديو</li><li>الكاميرات</li><li>غرف تحكم ثابتة ومتنقلة</li><li>الصوت</li><li>الإضاءة</li><li>شاشات LED</li><li>إنتاج متكامل</li></ul>
+          </div>
+        </article>
+        <article class="div" style="--c:var(--sig-b)">
+          <figure><img src="assets/haberturk-haber-1.jpg" alt="استوديو أخبار من تصميم TVS WorkHouse" loading="lazy"></figure>
+          <div class="body">
+            <p class="mono">TVS WorkHouse</p>
+            <h3>تصميم الديكور والمسارح</h3>
+            <p>المفهوم، التصميم ثلاثي الأبعاد، التصنيع والتركيب لبرامج الأخبار والرياضة والمسابقات والترفيه. مشاريع المتاحف والمساحات.</p>
+            <ul><li>تصميم ديكورات تلفزيونية</li><li>تصميم المسارح</li><li>مفاهيم ثلاثية الأبعاد</li><li>التصنيع والتركيب</li><li>التجديد</li><li>المتاحف والمساحات</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="uluslararasi">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="mono" style="grid-column:auto">عابرون للحدود</p>
+        <h2>مشاريع دولية</h2>
+        <p>مشاريع تسليم مفتاح لقنوات البث والمؤسسات العامة، من الخليج إلى شمال أفريقيا، ومن أوروبا إلى الأمريكتين.</p>
+      </div>
+      <div class="slates">
+        <article class="slate">
+          <div class="row"><span class="mono">قطر · الدوحة</span><span class="status live">مستمر</span></div>
+          <h3 lang="en">الجزيرة</h3>
+          <p>تصميم وتنفيذ ديكورات الاستوديوهات، شاشات LED وأعمال التجديد في مختلف قنوات الشبكة.</p>
+        </article>
+        <article class="slate">
+          <div class="row"><span class="mono">روسيا · موسكو</span><span class="status">2018</span></div>
+          <h3 lang="en">beIN Sports · كأس العالم</h3>
+          <p>ديكورات استوديوهات beIN في موسكو لكأس العالم FIFA 2018.</p>
+        </article>
+        <article class="slate">
+          <div class="row"><span class="mono">قطر</span><span class="status">2022</span></div>
+          <h3 lang="en">beIN Sports · كأس العالم</h3>
+          <p>كأس العالم FIFA 2022: ديكورات البث، تجهيزات الملاعب وإنتاج الفعاليات.</p>
+        </article>
+        <article class="slate">
+          <div class="row"><span class="mono">العراق · دهوك</span><span class="status">تسليم مفتاح</span></div>
+          <h3 lang="en">Waar TV</h3>
+          <p>من أرض فارغة إلى البث: بناء المركز الإعلامي واستوديوهاته وغرف التحكم والبنية التحتية للبث.</p>
+        </article>
+        <article class="slate">
+          <div class="row"><span class="mono">ليبيا</span><span class="status">متحف</span></div>
+          <h3>المتحف الوطني الليبي</h3>
+          <p>تصميم المتحف وتنفيذه.</p>
+        </article>
+        <article class="slate">
+          <div class="row"><span class="mono">ليبيا</span><span class="status">LED · إضاءة</span></div>
+          <h3>المطار</h3>
+          <p>شاشات LED وإضاءة المطار.</p>
+        </article>
+        <article class="slate">
+          <div class="row"><span class="mono">ليبيا</span><span class="status">فعاليات</span></div>
+          <h3>الأعياد الوطنية والمؤتمرات</h3>
+          <p>احتفالات 17 فبراير وعيد التحرير في 23 أكتوبر، فعاليات في ريكسوس، مؤتمرات عديدة، افتتاحات وإطلاقات.</p>
+        </article>
+        <article class="slate">
+          <div class="row"><span class="mono">إيران</span><span class="status">تصميم ديكور</span></div>
+          <h3 lang="en">GEM TV</h3>
+          <p>ديكورات استوديوهات القناة.</p>
+        </article>
+        <article class="slate">
+          <div class="row"><span class="mono">فرنسا</span><span class="status">استوديو</span></div>
+          <h3 lang="en">Equidia</h3>
+          <p>تصميم ديكور استوديو بث.</p>
+        </article>
+        <article class="slate pending">
+          <div class="row"><span class="mono">الولايات المتحدة والمزيد</span><span class="status">قريباً</span></div>
+          <h3>المزيد قريباً</h3>
+          <p>تفاصيل المشاريع وصورها قريباً.</p>
+        </article>
+      </div>
+      <h3 class="subhead">أعمال حديثة في تركيا</h3>
+      <div class="slates">
+        <article class="slate">
+          <div class="row"><span class="mono">ATV</span><span class="status live">دعم فني مستمر</span></div>
+          <h3>استوديوهات ATV الجديدة</h3>
+          <p>وفّرت TVS جميع شاشات LED في الاستوديوهات الجديدة وتواصل تقديم الدعم الفني.</p>
+        </article>
+        <article class="slate">
+          <div class="row"><span class="mono">TRT</span><span class="status">ديكور · LED</span></div>
+          <h3>أخبار TRT Spor</h3>
+          <p>ديكور استوديو الأخبار الرياضية وشاشات LED.</p>
+        </article>
+        <article class="slate">
+          <div class="row"><span class="mono">Diyanet TV</span><span class="status">تصميم ديكور</span></div>
+          <h3>Diyanet TV</h3>
+          <p>ديكورات استوديوهات القناة.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="workhouse" class="wh">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="mono" style="grid-column:auto">استوديو التصميم لدينا</p>
+        <h2>TVS WorkHouse</h2>
+        <p>يصمّم فريقنا في إسطنبول ديكورات ومسارح لبرامج الأخبار والرياضة والمسابقات والترفيه، وحفلات الجوائز، والمتاحف والفعاليات. ولأن التصميم والتنفيذ تحت سقف واحد، فكل ديكور نرسمه قابل للبناء فعلاً، وميزانيته واضحة منذ اليوم الأول.</p>
+      </div>
+      <ol class="steps">
+        <li><b>01</b><h3>المفهوم</h3><p>الفكرة الأولى، انطلاقاً من صيغة البرنامج وزوايا الكاميرا وهوية العلامة.</p></li>
+        <li><b>02</b><h3>تصميم ثلاثي الأبعاد</h3><p>صور واقعية بتقنية 3ds Max، لترى الاستوديو قبل أن يُبنى.</p></li>
+        <li><b>03</b><h3>المخططات الفنية</h3><p>مخططات AutoCAD، توزيع شاشات LED والإضاءة، قائمة المواد والتكاليف.</p></li>
+        <li><b>04</b><h3>التصنيع والتركيب</h3><p>تصنيع في الورشة، تركيب في الموقع، دمج الإضاءة وشاشات LED، وتسليم جاهز للبث.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="portfolyo">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="mono" style="grid-column:auto">من تصميم TVS WorkHouse</p>
+        <h2>أعمالنا</h2>
+        <p>مختارات من الاستوديوهات التي صمّمناها وبنيناها لأبرز القنوات التركية.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="فئات الأعمال">
+        <button role="tab" id="t-game" aria-selected="true" aria-controls="p-game">برامج المسابقات</button>
+        <button role="tab" id="t-news" aria-selected="false" aria-controls="p-news">الأخبار والرياضة</button>
+        <button role="tab" id="t-prog" aria-selected="false" aria-controls="p-prog">البرامج</button>
+      </div>
+      <div class="grid" id="p-game" role="tabpanel" aria-labelledby="t-game">
+        <figure class="w4"><img src="assets/atv-yari-yariya.jpg" alt="استوديو Yarı Yarıya" loading="lazy"><figcaption>ATV · Yarı Yarıya</figcaption></figure>
+        <figure><img src="assets/tv8-o-ses-detay.jpg" alt="تفاصيل استوديو The Voice Türkiye" loading="lazy"><figcaption>TV8 · The Voice Türkiye</figcaption></figure>
+        <figure class="w3"><img src="assets/tv8-o-ses-turkiye.jpg" alt="استوديو The Voice Türkiye" loading="lazy"><figcaption>TV8 · The Voice Türkiye</figcaption></figure>
+        <figure class="w3"><img src="assets/gameshow-sahne.jpg" alt="مسرح برنامج مسابقات" loading="lazy"><figcaption>مسرح برنامج مسابقات</figcaption></figure>
+        <figure class="w3"><img src="assets/trt-altin-petek-2.jpg" alt="استوديو Altın Petek" loading="lazy"><figcaption>TRT · Altın Petek</figcaption></figure>
+        <figure class="w3"><img src="assets/trt-altin-petek-1.jpg" alt="استوديو Altın Petek، تصميم بديل" loading="lazy"><figcaption>TRT · Altın Petek</figcaption></figure>
+      </div>
+      <div class="grid" id="p-news" role="tabpanel" aria-labelledby="t-news" hidden>
+        <figure class="w4"><img src="assets/haberturk-haber-1.jpg" alt="تصميم استوديو أخبار" loading="lazy"><figcaption>Habertürk · استوديو أخبار</figcaption></figure>
+        <figure><img src="assets/kanal24-haber.jpg" alt="استوديو أخبار Kanal 24" loading="lazy"><figcaption>Kanal 24</figcaption></figure>
+        <figure class="w3"><img src="assets/haberturk-haber-2.jpg" alt="استوديو أخبار، زاوية ثانية" loading="lazy"><figcaption>Habertürk · استوديو أخبار</figcaption></figure>
+        <figure class="w3"><img src="assets/spor-haber.jpg" alt="استوديو أخبار رياضية" loading="lazy"><figcaption>استوديو أخبار رياضية</figcaption></figure>
+      </div>
+      <div class="grid" id="p-prog" role="tabpanel" aria-labelledby="t-prog" hidden>
+        <figure class="w4"><img src="assets/trt-gulbence.jpg" alt="استوديو برنامج Gülbence" loading="lazy"><figcaption>TRT · Gülbence</figcaption></figure>
+        <figure><img src="assets/program-studyo-2.jpg" alt="استوديو برامج" loading="lazy"><figcaption>استوديو برامج</figcaption></figure>
+        <figure class="w4" style="grid-column:span 6"><img src="assets/program-studyo-1.jpg" alt="استوديو برنامج حواري" loading="lazy"><figcaption>استوديو برنامج حواري</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="referanslar">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="mono" style="grid-column:auto">مع من نعمل</p>
+        <h2>العملاء</h2>
+        <p>قنوات ومؤسسات بنينا لها استوديوهات وصمّمنا لها مسارح وعملنا معها على مدى السنوات.</p>
+      </div>
+      <div class="refs">
+        <div>
+          <h3>قنوات البث</h3>
+          <div class="chips"><span>TRT</span><span>ATV</span><span>Show TV</span><span>Kanal D</span><span>Star TV</span><span>Fox TV</span><span>TV8</span><span>Habertürk</span><span>Kanal 24</span><span>Lig TV</span><span>360</span><span>TürkMax</span><span>TGRT</span><span>Exxen</span><span>NOW</span><span lang="en">Salam TV</span><span lang="en">beIN Sports</span><span lang="en">الجزيرة</span><span lang="en">Equidia</span><span>BRT</span></div>
+        </div>
+        <div>
+          <h3>فعاليات وبرامج</h3>
+          <div class="chips"><span>جوائز الفراشة الذهبية</span><span>جوائز أفيفة جاله للمسرح</span><span>The Voice Türkiye</span><span>Var mısın Yok musun</span><span>Yarı Yarıya</span><span>Çarkıfelek</span><span>Buzda Dans</span><span>Bu Tarz Benim</span><span>Para Odası</span><span>Aileler Yarışıyor</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="grup">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="mono" style="grid-column:auto">TVS Group</p>
+        <h2>شركات المجموعة</h2>
+        <p>أعمالنا خارج مجال الإعلام تعمل بعلاماتها الخاصة.</p>
+      </div>
+      <div class="group">
+        <a class="co" href="https://smartyapim.com/">
+          <span class="mono">البناء · التطوير العقاري</span>
+          <h3>Smart Yapım</h3>
+          <p>بناء بنظام تسليم المفتاح وتطوير مشاريع، إسطنبول.</p>
+          <span class="mono">smartyapim.com ←</span>
+        </a>
+        <a class="co" href="https://sailamor.com/">
+          <span class="mono">البحرية · اليخوت</span>
+          <h3>Sailamor</h3>
+          <p>رحلات إبحار وتأجير يخوت من فتحية.</p>
+          <span class="mono">sailamor.com ←</span>
+        </a>
+        <div class="co">
+          <span class="mono">التكنولوجيا · الاستشارات</span>
+          <h3>MASK TVS</h3>
+          <p>استشارات تكنولوجيا البث وتكامل الأنظمة. مشاريع تقنية خارج تركيا، منها القراءة الآلية لعدادات المياه وأتمتة أجهزة الصراف الآلي.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="iletisim">
+    <div class="wrap contact">
+      <div>
+        <p class="mono">الاستوديو والمكتب</p>
+        <h2 style="font-size:clamp(40px,6vw,72px);margin:10px 0 20px">لنتحدث عن مشروعك</h2>
+        <p style="max-width:52ch;color:#C3C7CD;margin:0">برنامج جديد، تجديد استوديو، فعالية أو مشروع خارج تركيا: نحدّد معكم المتطلبات في اللقاء الأول ونعود إليكم بتصميم وميزانية.</p>
+      </div>
+      <dl>
+        <dt>العنوان</dt><dd>Hamidiye Mah., Girne Cad.<br>Çelik Özer İş Merkezi No: 49/2<br>34408 كاغيتهانة / إسطنبول، تركيا</dd>
+        <dt>البريد الإلكتروني</dt><dd><a href="mailto:info@tvs.com.tr">info@tvs.com.tr</a></dd>
+        <dt>الهاتف</dt><dd><a href="tel:4448887">444 88 87</a> <span class="mono">(من داخل تركيا)</span></dd>
+        <dt>Instagram</dt><dd><a href="https://www.instagram.com/tvsworkhouse/">@tvsworkhouse</a></dd>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 TVS Prodüksiyon Hizmetleri Tic. A.Ş. · TVS Group</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tabs [role=tab]'));
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(o){
+        var on=o===t;o.setAttribute('aria-selected',on);
+        document.getElementById(o.getAttribute('aria-controls')).hidden=!on;
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
