@@ -168,6 +168,7 @@ section{padding:88px 0;border-bottom:1px solid var(--line)}
 .chips{display:flex;flex-wrap:wrap;gap:8px 10px}
 .chips span{font-family:var(--display);font-weight:700;font-size:24px;text-transform:uppercase;color:#D9DCE0;padding:2px 0}
 .chips span:not(:last-child)::after{content:" /";color:#454A52}
+.chips small.ch{font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.08em;color:var(--muted);margin-inline-start:6px;vertical-align:middle}
 @media (max-width:760px){.refs{grid-template-columns:1fr}}
 
 /* Group */
@@ -507,21 +508,6 @@ footer a{color:var(--muted)}
           <h3 lang="tr">Beyaz ile Organize İşler</h3>
           <p>ديكور استوديو البرنامج.</p>
         </article>
-        <article class="slate">
-          <div class="row"><span class="mono">برنامج</span><span class="status">تصميم ديكور</span></div>
-          <h3 lang="tr">Kim Bunlar</h3>
-          <p>ديكور استوديو البرنامج.</p>
-        </article>
-        <article class="slate">
-          <div class="row"><span class="mono">NOW</span><span class="status">تصميم ديكور</span></div>
-          <h3 lang="tr">Tanıtımlara En İyi Ben Söylerim</h3>
-          <p>ديكور استوديو البرنامج.</p>
-        </article>
-        <article class="slate">
-          <div class="row"><span class="mono">Star TV</span><span class="status">تصميم ديكور</span></div>
-          <h3 lang="tr">Süperstar Aile</h3>
-          <p>ديكور استوديو البرنامج.</p>
-        </article>
       </div>
     </div>
   </section>
@@ -603,7 +589,7 @@ footer a{color:var(--muted)}
         </div>
         <div>
           <h3>فعاليات وبرامج</h3>
-          <div class="chips" role="list"><span role="listitem">Lingo</span><span role="listitem">Kumbara</span><span role="listitem">Yetenek Sizsiniz</span><span role="listitem">Yarı Yarıya</span><span role="listitem">Kazan Kazan</span><span role="listitem">Gelinim Mutfakta</span><span role="listitem">Şef Akademi</span><span role="listitem" lang="en">X Factor</span><span role="listitem">Şarkı Söylemek Lazım</span><span role="listitem">Susma</span><span role="listitem">Gelin Görümce</span><span role="listitem">Turnike</span><span role="listitem">Kim Gitsin?</span><span role="listitem">Kapanmadan Kazan</span><span role="listitem">دورة الألعاب الآسيوية لكرة القدم، قطر</span><span role="listitem">مشروع الرياضات الإلكترونية لـ Riot Games</span><span role="listitem">جوائز الفراشة الذهبية</span><span role="listitem">جوائز أفيفة جاله للمسرح</span><span role="listitem">The Voice Türkiye</span><span role="listitem">Var mısın Yok musun</span><span role="listitem">Çarkıfelek</span><span role="listitem">Buzda Dans</span><span role="listitem">Bu Tarz Benim</span><span role="listitem">Para Odası</span><span role="listitem">Aileler Yarışıyor</span><span role="listitem">Bir Şarkısın Sen</span><span role="listitem">Güven Bana</span><span role="listitem">Canlı Para</span><span role="listitem">Ben Bilmem Eşim Bilir</span><span role="listitem">Ben Buradan Atlarım</span><span role="listitem">Biri Bana Gelsin</span><span role="listitem">إطلاق مرسيدس</span><span role="listitem">إطلاق Beymen</span><span role="listitem">Cebit</span><span role="listitem">إسطنبول عاصمة الرياضة الأوروبية</span><span role="listitem">طواف تركيا الرئاسي للدراجات</span></div>
+          <div class="chips" role="list"><span role="listitem">Lingo <small class="ch">TRT 1</small></span><span role="listitem">Kumbara <small class="ch">NOW</small></span><span role="listitem" lang="tr">En İyi Ben Söylerim <small class="ch">NOW</small></span><span role="listitem" lang="tr">Süperstar Aile <small class="ch">Star TV</small></span><span role="listitem" lang="tr">Kim Bunlar</span><span role="listitem">Yetenek Sizsiniz</span><span role="listitem">Yarı Yarıya <small class="ch">ATV</small></span><span role="listitem">Kazan Kazan</span><span role="listitem">Gelinim Mutfakta</span><span role="listitem">Şef Akademi</span><span role="listitem" lang="en">X Factor</span><span role="listitem">Şarkı Söylemek Lazım</span><span role="listitem">Susma</span><span role="listitem">Gelin Görümce</span><span role="listitem">Turnike</span><span role="listitem">Kim Gitsin?</span><span role="listitem">Kapanmadan Kazan</span><span role="listitem">دورة الألعاب الآسيوية لكرة القدم، قطر</span><span role="listitem">مشروع الرياضات الإلكترونية لـ Riot Games</span><span role="listitem">جوائز الفراشة الذهبية</span><span role="listitem">جوائز أفيفة جاله للمسرح</span><span role="listitem">The Voice Türkiye <small class="ch">TV8</small></span><span role="listitem">Var mısın Yok musun</span><span role="listitem">Çarkıfelek</span><span role="listitem">Buzda Dans</span><span role="listitem">Bu Tarz Benim</span><span role="listitem">Para Odası</span><span role="listitem">Aileler Yarışıyor</span><span role="listitem">Bir Şarkısın Sen</span><span role="listitem">Güven Bana</span><span role="listitem">Canlı Para</span><span role="listitem">Ben Bilmem Eşim Bilir</span><span role="listitem">Ben Buradan Atlarım</span><span role="listitem">Biri Bana Gelsin</span><span role="listitem">إطلاق مرسيدس</span><span role="listitem">إطلاق Beymen</span><span role="listitem">Cebit</span><span role="listitem">إسطنبول عاصمة الرياضة الأوروبية</span><span role="listitem">طواف تركيا الرئاسي للدراجات</span></div>
         </div>
       </div>
     </div>
