@@ -99,6 +99,16 @@ section{padding:88px 0;border-bottom:1px solid var(--line)}
 .live .dot{width:12px;height:12px;border-radius:50%;background:var(--sig-r);box-shadow:0 0 14px var(--sig-r);animation:tally 2.4s ease-in-out infinite}
 @media (max-width:860px){.live-list{grid-template-columns:1fr}}
 
+.slate.has-img img{width:calc(100% + 44px);max-width:none;margin:-12px -22px 4px;aspect-ratio:16/9;object-fit:cover}
+/* Timeline */
+.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;border-top:1px solid var(--line)}
+.tl li{padding:20px 18px 6px 0;border-top:4px solid var(--sig-g);margin-top:-1px;display:grid;gap:8px;align-content:start}
+.tl b{font-family:var(--display);font-weight:900;font-size:40px;line-height:1}
+.tl p{margin:0;color:#C3C7CD;font-size:15px;padding-inline-end:12px}
+.tl-photo{margin:28px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tl-photo img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.tl-photo figcaption{grid-column:1/-1;font-family:var(--mono);font-size:12px;color:var(--muted)}
+@media (max-width:600px){.tl-photo{grid-template-columns:1fr}}
 /* Divisions */
 .divs{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .div{background:var(--panel);border:1px solid var(--line);display:grid;grid-template-rows:auto 1fr}
@@ -223,7 +233,7 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
       <div class="fact"><b>8</b><span>ülkede proje: Türkiye, Libya, Irak, Katar, İran, Fransa, Rusya, ABD</span></div>
       <div class="fact"><b>2</b><span>FIFA Dünya Kupası yayın organizasyonu (2018, 2022)</span></div>
       <div class="fact"><b>1</b><span>ulusal müze, Libya</span></div>
-      <div class="fact"><b>20</b><span>yayın kuruluşu referans listemizde: TRT, ATV, Show TV, Kanal D, beIN, Al Jazeera ve diğerleri</span></div>
+      <div class="fact"><b>23</b><span>yayın kuruluşu referans listemizde: TRT, ATV, Show TV, Kanal D, beIN, Al Jazeera ve diğerleri</span></div>
     </div>
   </div>
 
@@ -286,6 +296,30 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
     </div>
   </section>
 
+  <section id="tarihce">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="mono" style="grid-column:auto">Köklerimiz</p>
+        <h2>Tarihçe</h2>
+        <p>Film setlerinden yayın stüdyolarına, otuz yılı aşkın bir birikim.</p>
+      </div>
+      <ol class="tl">
+        <li><b>1989</b><p>Film prodüksiyon hizmetleriyle sektöre giriş.</p></li>
+        <li><b>1999</b><p>ATA Film Stüdyoları: İstanbul'da 6.500 m² alanda, ses ve akustik yalıtımlı 5 plato. Projelendirdik ve inşa ettik.</p></li>
+        <li><b>2005</b><p>TEM Stüdyoları, ATA Film Stüdyoları bünyesine katıldı.</p></li>
+        <li><b>2007</b><p>TVS Prodüksiyon kuruldu.</p></li>
+        <li><b>2018</b><p>Moskova: beIN Sports Dünya Kupası stüdyoları.</p></li>
+        <li><b>2022</b><p>Katar: Dünya Kupası yayın ve stadyum dekorları.</p></li>
+        <li><b>Bugün</b><p>Kağıthane stüdyolarında Lingo ve Kumbara; Al Jazeera ve ATV'de süren işler.</p></li>
+      </ol>
+      <figure class="tl-photo">
+        <img src="assets/ata-film-studyolari.jpg" alt="ATA Film Stüdyoları, İstanbul" loading="lazy">
+        <img src="assets/ata-film-plato.jpg" alt="ATA Film Stüdyoları, İstanbul" loading="lazy">
+        <figcaption>ATA Film Stüdyoları, İstanbul · 1999</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section id="uluslararasi">
     <div class="wrap">
       <div class="sec-head">
@@ -309,10 +343,16 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
           <h3 lang="en">beIN Sports · Dünya Kupası</h3>
           <p>2022 FIFA Dünya Kupası: yayın dekorları, stadyum dekorları ve etkinlik uygulamaları.</p>
         </article>
-        <article class="slate">
+        <article class="slate has-img">
+          <img src="assets/waar-tv-duhok.jpg" alt="Duhok'taki Waar TV medya merkezi binası" loading="lazy">
           <div class="row"><span class="mono">Irak · Duhok</span><span class="status">ANAHTAR TESLİM</span></div>
           <h3 lang="en">Waar TV</h3>
-          <p>Boş araziden yayına: medya merkezinin inşaatı, stüdyoları, rejileri ve yayın altyapısı.</p>
+          <p>Proje ve inşaat: boş araziden yayına, ses ve akustik yalıtımlı platolarıyla bir medya kompleksi. Bünyesinde 2 ulusal televizyon kanalı, 1 radyo ve 1 gazete.</p>
+        </article>
+        <article class="slate">
+          <div class="row"><span class="mono">Irak · Erbil</span><span class="status">ETKİNLİK</span></div>
+          <h3>Erbil Havalimanı</h3>
+          <p>Havalimanı açılış organizasyonu.</p>
         </article>
         <article class="slate">
           <div class="row"><span class="mono">Libya</span><span class="status">MÜZE</span></div>
@@ -393,6 +433,7 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
         <button role="tab" id="t-game" aria-selected="true" aria-controls="p-game">Game Show</button>
         <button role="tab" id="t-news" aria-selected="false" aria-controls="p-news">Haber ve Spor</button>
         <button role="tab" id="t-prog" aria-selected="false" aria-controls="p-prog">Program</button>
+        <button role="tab" id="t-ev" aria-selected="false" aria-controls="p-ev">Etkinlik ve Sahne</button>
       </div>
       <div class="grid" id="p-game" role="tabpanel" aria-labelledby="t-game">
         <figure class="w4"><img src="assets/atv-yari-yariya.jpg" alt="Yarı Yarıya stüdyosu" loading="lazy"><figcaption>ATV · Yarı Yarıya</figcaption></figure>
@@ -409,9 +450,21 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
         <figure class="w3"><img src="assets/spor-haber.jpg" alt="Spor haber stüdyosu" loading="lazy"><figcaption>Spor haber stüdyosu</figcaption></figure>
       </div>
       <div class="grid" id="p-prog" role="tabpanel" aria-labelledby="t-prog" hidden>
+        <figure class="w4"><img src="assets/bein-gurme-1.jpg" alt="beIN Gurme stüdyo tasarımı" loading="lazy"><figcaption>beIN Gurme · Stüdyo tasarımı</figcaption></figure>
+        <figure><img src="assets/bein-gurme-plan.jpg" alt="beIN Gurme stüdyo yerleşim planı" loading="lazy"><figcaption>beIN Gurme · Yerleşim planı</figcaption></figure>
+        <figure class="w3"><img src="assets/bein-gurme-2.jpg" alt="beIN Gurme stüdyo tasarımı" loading="lazy"><figcaption>beIN Gurme · Stüdyo tasarımı</figcaption></figure>
+        <figure class="w3"><img src="assets/bein-gurme-3.jpg" alt="beIN Gurme stüdyo tasarımı" loading="lazy"><figcaption>beIN Gurme · Stüdyo tasarımı</figcaption></figure>
         <figure class="w4"><img src="assets/trt-gulbence.jpg" alt="Gülbence program stüdyosu" loading="lazy"><figcaption>TRT · Gülbence</figcaption></figure>
         <figure><img src="assets/program-studyo-2.jpg" alt="Program stüdyosu" loading="lazy"><figcaption>Program stüdyosu</figcaption></figure>
         <figure class="w4" style="grid-column:span 6"><img src="assets/program-studyo-1.jpg" alt="Talk show stüdyosu" loading="lazy"><figcaption>Talk show stüdyosu</figcaption></figure>
+      </div>
+      <div class="grid" id="p-ev" role="tabpanel" aria-labelledby="t-ev" hidden>
+        <figure class="w4"><img src="assets/atv-bir-sarkisin-sen.jpg" alt="Bir Şarkısın Sen sahnesi" loading="lazy"><figcaption>ATV · Bir Şarkısın Sen</figcaption></figure>
+        <figure><img src="assets/o-ses-turkiye-sahne.jpg" alt="O Ses Türkiye sahnesi" loading="lazy"><figcaption>Show TV · O Ses Türkiye</figcaption></figure>
+        <figure class="w3"><img src="assets/buzda-dans.jpg" alt="Buzda Dans buz pisti ve sahnesi" loading="lazy"><figcaption>Show TV · Buzda Dans</figcaption></figure>
+        <figure class="w3"><img src="assets/biri-bana-gelsin.jpg" alt="Biri Bana Gelsin sahnesi" loading="lazy"><figcaption>Show TV · Biri Bana Gelsin</figcaption></figure>
+        <figure class="w3"><img src="assets/beymen-lansman.jpg" alt="Beymen lansmanı, Hilton" loading="lazy"><figcaption>Beymen · Lansman, Hilton</figcaption></figure>
+        <figure class="w3"><img src="assets/afife-jale.jpg" alt="Afife Jale Tiyatro Ödülleri töreni" loading="lazy"><figcaption>Afife Jale Tiyatro Ödülleri</figcaption></figure>
       </div>
     </div>
   </section>
@@ -426,11 +479,11 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
       <div class="refs">
         <div>
           <h3>Kanallar</h3>
-          <div class="chips"><span>TRT</span><span>ATV</span><span>Show TV</span><span>Kanal D</span><span>Star TV</span><span>Fox TV</span><span>TV8</span><span>Habertürk</span><span>Kanal 24</span><span>Lig TV</span><span>360</span><span>TürkMax</span><span>TGRT</span><span>Exxen</span><span>NOW</span><span lang="en">Salam TV</span><span lang="en">beIN Sports</span><span lang="en">Al Jazeera</span><span lang="en">Equidia</span><span>BRT</span></div>
+          <div class="chips"><span>TRT</span><span>ATV</span><span>Show TV</span><span>Kanal D</span><span>Star TV</span><span>Fox TV</span><span>TV8</span><span>Habertürk</span><span>Kanal 24</span><span>Lig TV</span><span>360</span><span>TürkMax</span><span>TGRT</span><span>Exxen</span><span>NOW</span><span lang="en">Salam TV</span><span lang="en">beIN Sports</span><span lang="en">Al Jazeera</span><span lang="en">Equidia</span><span>BRT</span><span lang="en">S Sport</span><span lang="en">GEM TV</span><span lang="en">Libya Al Ahrar</span></div>
         </div>
         <div>
           <h3>Etkinlikler ve programlar</h3>
-          <div class="chips"><span>Altın Kelebek Ödülleri</span><span>Afife Jale Tiyatro Ödülleri</span><span>O Ses Türkiye</span><span>Var mısın Yok musun</span><span>Yarı Yarıya</span><span>Çarkıfelek</span><span>Buzda Dans</span><span>Bu Tarz Benim</span><span>Para Odası</span><span>Aileler Yarışıyor</span></div>
+          <div class="chips"><span>Altın Kelebek Ödülleri</span><span>Afife Jale Tiyatro Ödülleri</span><span>O Ses Türkiye</span><span>Var mısın Yok musun</span><span>Yarı Yarıya</span><span>Çarkıfelek</span><span>Buzda Dans</span><span>Bu Tarz Benim</span><span>Para Odası</span><span>Aileler Yarışıyor</span><span>Kapanmadan Kazan</span><span>Yetenek Sizsiniz</span><span>Bir Şarkısın Sen</span><span>Güven Bana</span><span>Canlı Para</span><span>Ben Bilmem Eşim Bilir</span><span>Ben Buradan Atlarım</span><span>Biri Bana Gelsin</span><span>Mercedes tanıtımı</span><span>Beymen lansmanı</span><span>Cebit 2011</span><span>2012 İstanbul Avrupa Spor Başkenti</span><span>Cumhurbaşkanlığı Bisiklet Turu</span></div>
         </div>
       </div>
     </div>

@@ -99,6 +99,16 @@ section{padding:88px 0;border-bottom:1px solid var(--line)}
 .live .dot{width:12px;height:12px;border-radius:50%;background:var(--sig-r);box-shadow:0 0 14px var(--sig-r);animation:tally 2.4s ease-in-out infinite}
 @media (max-width:860px){.live-list{grid-template-columns:1fr}}
 
+.slate.has-img img{width:calc(100% + 44px);max-width:none;margin:-12px -22px 4px;aspect-ratio:16/9;object-fit:cover}
+/* Timeline */
+.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;border-top:1px solid var(--line)}
+.tl li{padding:20px 18px 6px 0;border-top:4px solid var(--sig-g);margin-top:-1px;display:grid;gap:8px;align-content:start}
+.tl b{font-family:var(--display);font-weight:900;font-size:40px;line-height:1}
+.tl p{margin:0;color:#C3C7CD;font-size:15px;padding-inline-end:12px}
+.tl-photo{margin:28px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tl-photo img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.tl-photo figcaption{grid-column:1/-1;font-family:var(--mono);font-size:12px;color:var(--muted)}
+@media (max-width:600px){.tl-photo{grid-template-columns:1fr}}
 /* Divisions */
 .divs{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .div{background:var(--panel);border:1px solid var(--line);display:grid;grid-template-rows:auto 1fr}
@@ -224,7 +234,7 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
       <div class="fact"><b>8</b><span>países con proyectos: Turquía, Libia, Irak, Catar, Irán, Francia, Rusia, EE. UU.</span></div>
       <div class="fact"><b>2</b><span>operaciones de retransmisión de la Copa Mundial de la FIFA (2018, 2022)</span></div>
       <div class="fact"><b>1</b><span>museo nacional, Libia</span></div>
-      <div class="fact"><b>20</b><span>cadenas en nuestra lista de clientes, entre ellas TRT, ATV, Show TV, Kanal D, beIN y Al Jazeera</span></div>
+      <div class="fact"><b>23</b><span>cadenas en nuestra lista de clientes, entre ellas TRT, ATV, Show TV, Kanal D, beIN y Al Jazeera</span></div>
     </div>
   </div>
 
@@ -287,6 +297,30 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
     </div>
   </section>
 
+  <section id="tarihce">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="mono" style="grid-column:auto">Nuestras raíces</p>
+        <h2>Historia</h2>
+        <p>Más de treinta años, de los rodajes de cine a los estudios de televisión.</p>
+      </div>
+      <ol class="tl">
+        <li><b>1989</b><p>Entrada en el sector con servicios de producción cinematográfica.</p></li>
+        <li><b>1999</b><p>ATA Film Studios: cinco platós con aislamiento acústico en 6.500 m² en Estambul. Los diseñamos y construimos.</p></li>
+        <li><b>2005</b><p>TEM Studios se integró en ATA Film Studios.</p></li>
+        <li><b>2007</b><p>Fundación de TVS Production.</p></li>
+        <li><b>2018</b><p>Moscú: estudios de beIN Sports para la Copa Mundial.</p></li>
+        <li><b>2022</b><p>Catar: escenografías de emisión y de estadios para la Copa Mundial.</p></li>
+        <li><b>Hoy</b><p>Lingo y Kumbara en nuestros estudios de Kağıthane; proyectos en curso para Al Jazeera y ATV.</p></li>
+      </ol>
+      <figure class="tl-photo">
+        <img src="assets/ata-film-studyolari.jpg" alt="ATA Film Studios, Estambul" loading="lazy">
+        <img src="assets/ata-film-plato.jpg" alt="ATA Film Studios, Estambul" loading="lazy">
+        <figcaption>ATA Film Studios, Estambul · 1999</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section id="uluslararasi">
     <div class="wrap">
       <div class="sec-head">
@@ -310,10 +344,16 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
           <h3 lang="en">beIN Sports · Copa Mundial</h3>
           <p>Copa Mundial de la FIFA 2022: platós de emisión, instalaciones en estadios y producción de eventos.</p>
         </article>
-        <article class="slate">
+        <article class="slate has-img">
+          <img src="assets/waar-tv-duhok.jpg" alt="Edificio del centro de medios de Waar TV en Duhok" loading="lazy">
           <div class="row"><span class="mono">Irak · Duhok</span><span class="status">LLAVE EN MANO</span></div>
           <h3 lang="en">Waar TV</h3>
-          <p>De un terreno vacío a la emisión: construcción del centro de medios, sus estudios, controles y la infraestructura de emisión.</p>
+          <p>Diseño y construcción: de un terreno vacío a la emisión, un complejo de medios con platós insonorizados que alberga dos canales nacionales de televisión, una radio y un periódico.</p>
+        </article>
+        <article class="slate">
+          <div class="row"><span class="mono">Irak · Erbil</span><span class="status">EVENTOS</span></div>
+          <h3>Aeropuerto de Erbil</h3>
+          <p>Producción de la ceremonia de inauguración del aeropuerto.</p>
         </article>
         <article class="slate">
           <div class="row"><span class="mono">Libia</span><span class="status">MUSEO</span></div>
@@ -394,6 +434,7 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
         <button role="tab" id="t-game" aria-selected="true" aria-controls="p-game">Concursos</button>
         <button role="tab" id="t-news" aria-selected="false" aria-controls="p-news">Informativos y deportes</button>
         <button role="tab" id="t-prog" aria-selected="false" aria-controls="p-prog">Programas</button>
+        <button role="tab" id="t-ev" aria-selected="false" aria-controls="p-ev">Eventos y escenarios</button>
       </div>
       <div class="grid" id="p-game" role="tabpanel" aria-labelledby="t-game">
         <figure class="w4"><img src="assets/atv-yari-yariya.jpg" alt="Plató de Yarı Yarıya" loading="lazy"><figcaption>ATV · Yarı Yarıya</figcaption></figure>
@@ -410,9 +451,21 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
         <figure class="w3"><img src="assets/spor-haber.jpg" alt="Plató de informativos deportivos" loading="lazy"><figcaption>Plató de informativos deportivos</figcaption></figure>
       </div>
       <div class="grid" id="p-prog" role="tabpanel" aria-labelledby="t-prog" hidden>
+        <figure class="w4"><img src="assets/bein-gurme-1.jpg" alt="Diseño del plató de beIN Gurme" loading="lazy"><figcaption>beIN Gurme · Diseño de plató</figcaption></figure>
+        <figure><img src="assets/bein-gurme-plan.jpg" alt="Planta del plató de beIN Gurme" loading="lazy"><figcaption>beIN Gurme · Planta</figcaption></figure>
+        <figure class="w3"><img src="assets/bein-gurme-2.jpg" alt="Diseño del plató de beIN Gurme" loading="lazy"><figcaption>beIN Gurme · Diseño de plató</figcaption></figure>
+        <figure class="w3"><img src="assets/bein-gurme-3.jpg" alt="Diseño del plató de beIN Gurme" loading="lazy"><figcaption>beIN Gurme · Diseño de plató</figcaption></figure>
         <figure class="w4"><img src="assets/trt-gulbence.jpg" alt="Plató del programa Gülbence" loading="lazy"><figcaption>TRT · Gülbence</figcaption></figure>
         <figure><img src="assets/program-studyo-2.jpg" alt="Plató de programa" loading="lazy"><figcaption>Plató de programa</figcaption></figure>
         <figure class="w4" style="grid-column:span 6"><img src="assets/program-studyo-1.jpg" alt="Plató de talk show" loading="lazy"><figcaption>Plató de talk show</figcaption></figure>
+      </div>
+      <div class="grid" id="p-ev" role="tabpanel" aria-labelledby="t-ev" hidden>
+        <figure class="w4"><img src="assets/atv-bir-sarkisin-sen.jpg" alt="Escenario de Bir Şarkısın Sen" loading="lazy"><figcaption>ATV · Bir Şarkısın Sen</figcaption></figure>
+        <figure><img src="assets/o-ses-turkiye-sahne.jpg" alt="Escenario de La Voz Turquía" loading="lazy"><figcaption>Show TV · La Voz Turquía</figcaption></figure>
+        <figure class="w3"><img src="assets/buzda-dans.jpg" alt="Pista de hielo y escenario de Buzda Dans" loading="lazy"><figcaption>Show TV · Bailando sobre hielo</figcaption></figure>
+        <figure class="w3"><img src="assets/biri-bana-gelsin.jpg" alt="Escenario de Biri Bana Gelsin" loading="lazy"><figcaption>Show TV · Biri Bana Gelsin</figcaption></figure>
+        <figure class="w3"><img src="assets/beymen-lansman.jpg" alt="Lanzamiento de Beymen, Hilton" loading="lazy"><figcaption>Beymen · Lanzamiento, Hilton</figcaption></figure>
+        <figure class="w3"><img src="assets/afife-jale.jpg" alt="Ceremonia de los Premios de Teatro Afife Jale" loading="lazy"><figcaption>Premios de Teatro Afife Jale</figcaption></figure>
       </div>
     </div>
   </section>
@@ -427,11 +480,11 @@ footer p{margin:0;font-size:13px;color:var(--muted)}
       <div class="refs">
         <div>
           <h3>Cadenas</h3>
-          <div class="chips"><span>TRT</span><span>ATV</span><span>Show TV</span><span>Kanal D</span><span>Star TV</span><span>Fox TV</span><span>TV8</span><span>Habertürk</span><span>Kanal 24</span><span>Lig TV</span><span>360</span><span>TürkMax</span><span>TGRT</span><span>Exxen</span><span>NOW</span><span lang="en">Salam TV</span><span lang="en">beIN Sports</span><span lang="en">Al Jazeera</span><span lang="en">Equidia</span><span>BRT</span></div>
+          <div class="chips"><span>TRT</span><span>ATV</span><span>Show TV</span><span>Kanal D</span><span>Star TV</span><span>Fox TV</span><span>TV8</span><span>Habertürk</span><span>Kanal 24</span><span>Lig TV</span><span>360</span><span>TürkMax</span><span>TGRT</span><span>Exxen</span><span>NOW</span><span lang="en">Salam TV</span><span lang="en">beIN Sports</span><span lang="en">Al Jazeera</span><span lang="en">Equidia</span><span>BRT</span><span lang="en">S Sport</span><span lang="en">GEM TV</span><span lang="en">Libya Al Ahrar</span></div>
         </div>
         <div>
           <h3>Eventos y programas</h3>
-          <div class="chips"><span>Premios Mariposa de Oro</span><span>Premios de Teatro Afife Jale</span><span>La Voz Turquía</span><span>Var mısın Yok musun</span><span>Yarı Yarıya</span><span>Çarkıfelek</span><span>Buzda Dans</span><span>Bu Tarz Benim</span><span>Para Odası</span><span>Aileler Yarışıyor</span></div>
+          <div class="chips"><span>Premios Mariposa de Oro</span><span>Premios de Teatro Afife Jale</span><span>La Voz Turquía</span><span>Var mısın Yok musun</span><span>Yarı Yarıya</span><span>Çarkıfelek</span><span>Buzda Dans</span><span>Bu Tarz Benim</span><span>Para Odası</span><span>Aileler Yarışıyor</span><span>Kapanmadan Kazan</span><span>Yetenek Sizsiniz</span><span>Bir Şarkısın Sen</span><span>Güven Bana</span><span>Canlı Para</span><span>Ben Bilmem Eşim Bilir</span><span>Ben Buradan Atlarım</span><span>Biri Bana Gelsin</span><span>Lanzamiento de Mercedes</span><span>Lanzamiento de Beymen</span><span>Cebit 2011</span><span>Estambul, Capital Europea del Deporte 2012</span><span>Vuelta Ciclista Presidencial de Turquía</span></div>
         </div>
       </div>
     </div>
