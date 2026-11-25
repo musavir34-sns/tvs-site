@@ -230,6 +230,31 @@ footer a{color:var(--muted)}
 .cform button[disabled]{opacity:.6;cursor:wait}
 .cform .st{min-height:1.6em;color:var(--ink);font-weight:600}
 @media (max-width:700px){.cform{grid-template-columns:1fr}}
+
+.t2s{display:grid;grid-template-columns:repeat(auto-fill,minmax(440px,1fr));gap:22px;margin-top:22px}
+@media (max-width:520px){.t2s{grid-template-columns:1fr}}
+.pair{margin:0;background:var(--panel);border:1px solid var(--line)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line)}
+.ph{position:relative;background:#000}
+.ph img,.ph video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.tag{position:absolute;inset-inline-start:8px;top:8px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;background:rgba(10,11,13,.85);color:var(--ink);padding:4px 8px}
+.tag.on{background:#C62828;color:#fff}
+.vbtn{position:absolute;inset-inline-end:8px;bottom:8px;font:600 12px var(--body);background:rgba(10,11,13,.85);color:var(--ink);border:1px solid #4A505A;padding:5px 9px;cursor:pointer}
+.pair figcaption{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:14px 16px;flex-wrap:wrap}
+.pair figcaption b{font-family:var(--display);font-size:24px;text-transform:uppercase;letter-spacing:.01em}
+.pair figcaption .mono{color:var(--muted)}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+@media (max-width:760px){.gal{grid-template-columns:1fr 1fr}}
+.gal figure{margin:0;background:var(--panel);border:1px solid var(--line)}
+.gal img{display:block;width:100%;height:auto}
+.gal figcaption{padding:10px 12px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#B4B9C1}
+.yt{margin-top:16px;position:relative;max-width:900px}
+.yt button{display:block;width:100%;padding:0;border:1px solid var(--line);background:#000;cursor:pointer;position:relative;color:var(--ink);font:inherit}
+.yt button img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;opacity:.75}
+.yt button span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#C62828;color:#fff;font-weight:600;padding:14px 22px;white-space:nowrap}
+.yt iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
+.yt p{margin:8px 0 0;font-size:13px;color:var(--muted)}
+.yt p a{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -305,7 +330,7 @@ footer a{color:var(--muted)}
         <article class="live has-img">
           <img src="assets/salam-tv-libya.jpg" alt="Libya Salam TV stüdyosu, kanal logosu ve sunucular" loading="lazy">
           <span class="dot" aria-hidden="true"></span>
-          <div><h3 lang="en">Salam TV</h3><p class="mono">Libya</p></div>
+          <div><h3 lang="en">Salam TV</h3><p class="mono">Libya · Kağıthane Stüdyoları</p></div>
           <span class="status live">YAYINDA</span>
         </article>
       </div>
@@ -463,7 +488,8 @@ footer a{color:var(--muted)}
           <h3 lang="en">GEM TV</h3>
           <p>Kanal stüdyo dekorları.</p>
         </article>
-        <article class="slate">
+        <article class="slate has-img">
+          <img src="assets/equidia.jpg" alt="Equidia'nın Le Grand Debrief stüdyosu" loading="lazy">
           <div class="row"><span class="mono">Fransa</span><span class="status">STÜDYO</span></div>
           <h3 lang="en">Equidia</h3>
           <p>Yayın stüdyosu dekor tasarımı ve tam donanımlı canlı yayın aracı (OB van).</p>
@@ -483,6 +509,13 @@ footer a{color:var(--muted)}
           <h3>Üniversite stüdyoları</h3>
           <p>Üniversiteler için eğitim stüdyosu projeleri.</p>
         </article>
+      </div>
+      <h3 class="subhead" id="libya-muze">Öne çıkan proje: Libya Ulusal Müzesi</h3>
+      <p class="scope-note" style="margin:0">Trablus'ta Şehitler Meydanı'ndaki Libya Ulusal Müzesi'nin yenilenmesi: tasarım, uygulama ve 12 Aralık 2025'teki açılış organizasyonu.</p>
+      <div class="gal"><figure><img src="assets/muze-giris.jpg" alt="Libya Ulusal Müzesi, Giriş alanı: tasarım ve uygulama görselleri" loading="lazy" width="1000" height="707"><figcaption>Giriş alanı</figcaption></figure><figure><img src="assets/muze-dijital.jpg" alt="Libya Ulusal Müzesi, Dijital alan: tasarım ve uygulama görselleri" loading="lazy" width="1000" height="707"><figcaption>Dijital alan</figcaption></figure><figure><img src="assets/muze-kus.jpg" alt="Libya Ulusal Müzesi, Kuş sergisi: tasarım ve uygulama görselleri" loading="lazy" width="1000" height="707"><figcaption>Kuş sergisi</figcaption></figure><figure><img src="assets/muze-mumya.jpg" alt="Libya Ulusal Müzesi, Mumya alanı: tasarım ve uygulama görselleri" loading="lazy" width="1000" height="707"><figcaption>Mumya alanı</figcaption></figure><figure><img src="assets/muze-septimus.jpg" alt="Libya Ulusal Müzesi, Septimius alanı: tasarım ve uygulama görselleri" loading="lazy" width="1000" height="707"><figcaption>Septimius alanı</figcaption></figure><figure><img src="assets/muze-kostum.jpg" alt="Libya Ulusal Müzesi, Kostüm alanı: tasarım ve uygulama görselleri" loading="lazy" width="1000" height="707"><figcaption>Kostüm alanı</figcaption></figure></div>
+      <div class="yt">
+        <button type="button" data-id="eswFTr5r0po" data-title="Öne çıkan proje: Libya Ulusal Müzesi"><img src="assets/muze-video.jpg" alt="" loading="lazy" width="800" height="450"><span>▶ Açılış töreni kaydını oynat</span></button>
+        <p>YouTube'dan oynatılır; başlatınca YouTube çerezleri yüklenir. <a href="https://www.youtube.com/watch?v=eswFTr5r0po" rel="noopener">YouTube'da izle</a></p>
       </div>
       <h3 class="subhead">Türkiye'de son işler</h3>
       <div class="slates">
@@ -539,7 +572,95 @@ footer a{color:var(--muted)}
         <li><b>04</b><h3>İmalat ve kurulum</h3><p>Atölyede üretim, sahada montaj, ışık ve LED entegrasyonu, yayına hazır teslim.</p></li>
       </ol>
       <p class="wh-intro">TVS WorkHouse 20 yılı aşkın süredir haber, talk show ve yarışma programları için konsept stüdyo tasarımı ve uygulaması yapıyor. 2014’ten beri ekran, ışık ve ses tarafındaki TVS Prodüksiyon ile aynı çatı altında. Öne çıkan kanallar: TRT, Kanal D, Haber Global, beIN Türkiye ve Katar, beIN Gurme, Star TV, Equidia (Fransa), Al Jazeera.</p>
-      <details class="arch"><summary>Tasarım arşivi: 2006’dan bugüne kanallara göre 180’den fazla stüdyo ve program</summary><div class="in"><div><h4>Kanal D</h4><p>Beyaz Show (2013, 2015, 2017) · Altın Kelebek (2012, 2015, 50. yıl) · Ece Üner ile Susma · Şarkılar Bizi Söyler (2021) · Konuştukça (2020) · Neler Oluyor Hayatta (2020) · Balçiçek ile Dr. Cankurtaran (2019) · 2. Sayfa (2019) · 4 Kadın (2018) · Ben Bilmem Eşim Bilir (2012, 2018) · Çarkıfelek (2018) · Yeni Bir Ben (2018) · Gelinim Mutfakta (2018) · Kanal D Haber (2018) · Magazin D (2018) · Yaşım Kaç? (2018) · Şöhret Kafası (2018) · Çok Tatlı (2018) · Günaydın Türkiye (2017) · Renkli Sayfalar (2016) · Burada Laf Çok (2016) · Özledim Seni (2014) · Guinness Turkey (2013) · Kapış Kapış (2013) · Kaynana Gelin Seda'ya Gelin (2013) · Turnike · Password · BJK Bağış Gecesi</p></div><div><h4>Fox TV / NOW</h4><p>En İyi Ben Söylerim · Şef Akademi · Fulya ile Umudun Olsun · Bu Tabak Kimin? · Gelin Görümce · Acayip Tipler (2018) · On Numara Beş Yıldız (2017) · Gönder Gitsin (2017) · Bu Sayılmaz (2017) · Yuvamız Yıkılmasın (2017) · Kaybolan Çiçekler (2017) · Sen İste Yeter (2017) · Fox Haber (2013) · Su Gibi (2013) · Yeni Bir Umut (2013) · Kamuflaj (2012)</p></div><div><h4>Star TV</h4><p>Var mısın Yok musun (2016) · Alelade Show · Çarkıfelek (2015) · Patron (2015) · Ben Olsam (2015) · Evleneceksen Gel (2015) · Dada (2015) · Miss Turkey (2007) · Ünlüler Sirki (2007) · Star Haber Merkezi (2006) · Objektif (2006) · Deşifre (2006) · Son Ütücü (2006) · Anında Görüntü (2006) · Deniz Akkaya ile Top Model (2006) · Cleaver (2006)</p></div><div><h4>Show TV</h4><p>Kapışma (2015) · Show TV Ana Haber (2013) · Show Kulüp (2013) · Show Gece Magazin (2013) · Hayata Dokunmak Gerek (2013) · Makina Kafa (2013) · Kelime Oyunu (2013) · Bülent Ersoy Show (2013) · Yurdum İnsanı (2013) · Şeflerin Düellosu (2012)</p></div><div><h4>TRT</h4><p>TRT 1: Kim Gitsin? · Sen Türkülerini Söyle · Seneye Bu Zamanlar (2020) · Acemi Anneler (2020) · Aileler Yarışıyor (2018) · İyi Fikir (2018) · Altın Petek (2016) · İlk Baskı (2013) — TRT Haber: haber stüdyosu (2017), Bi Fikrin mi Var? (2017) — TRT Spor: Doğan Kasaroğlu (2017) — TRT Kurdî haber stüdyosu (2016) — TRT Arabi stüdyosu (2014) — TRT Diyanet stüdyosu (2014)</p></div><div><h4>TV8</h4><p>O Ses Türkiye (2014) · Hülya Avşar Show (2014) · Anlatacaklarım Var (2013) · Aramızda Kalsın (2013) · Canım Doktor (2013) · Her Pazar (2013) · Bir Ses Bir Nefes (2013) · Aşka Gel (2013)</p></div><div><h4>Habertürk · Haber Global · A Haber · TGRT · 24 TV · CNN Türk · Sky Türk</h4><p>Habertürk haber stüdyosu, Fatih Altaylı, HT Beyin (2013) · Haber Global: 40, stüdyo (2019) · A Haber: haber bülteni (2020), spor stüdyosu (2014) · TGRT Haber stüdyosu · TGRT Europe · 24 TV stüdyoları (2013) · CNN Türk: 5N1K (2007) · Sky Türk haber merkezi (2006)</p></div><div><h4>360 TV</h4><p>Benim Yemeğim (2021) · haber stüdyosu (2016) · Her Şey Dahil (2016) · Elifnağme (2016) · Telegol (2016) · Yeşim Salkım ile Yeni Ben (2016)</p></div><div><h4>beIN</h4><p>beIN Sports Türkiye · Doha stüdyoları · Dünya Kupası 2018 (Rusya) · Dünya Kupası 2022: Capsule ve Corniche projeleri, Katar Spor Müzesi · Kolaysa Anlat (2020) · stadyumlar ve masalar (2019) · Şampiyonlar Ligi (2018) · Asya Oyunları, Katar (2018) · beIN Comedy: Kaan Sekban'la Bi Kahve (2020), Comedy Max · beIN Gurme: Mutlu Mutfak (2020), İki Şekerli Bir Sade (2017), Bıçağın İki Yüzü, Şefin Dünyası · beIN TV: Miami Radio Show, ABD (2018)</p></div><div><h4>Spor kanalları</h4><p>Lig TV: Oscar (2015), Lig TV 2 stüdyosu (2012), Maraton (2007) · GS TV stüdyoları (2012, 2018) · TJK TV stüdyoları (2016) · S Sport: S Sport Radyo (2017), Saran · Kanal 1: Telegol (2007) · Turkmax Gurme: Bıçağın İki Yüzü, Lezzetli Sohbetler, Şef Hazel (2016)</p></div><div><h4>Diğer kanallar ve platformlar</h4><p>Diyanet TV tüm stüdyolar (2013) · Milli Piyango TV (2020) · Exxen: Enis Arıkan (2020), Kaan Sekban'la Alt Tarafı Bi' Talk Show · Gain: Mirgün Cabas (2021) · CNBC-e: Letterbox · Nickelodeon (2017) · MTV Türkiye stüdyosu (2006) · Dream TV: Dream Genç İz, Dream Evdeki Ses (2013) · İBB stüdyosu (2017) · YouTube: Göster Kendini (2021), BJK Bırakmam Seni (2020), Mey (2019), Bide Bunu İzle (2019) · Milliyet Gillette Yılın Sporcusu Ödülleri · Cash Kitchen · İbo Show Yılbaşı 2022</p></div><div><h4>Yurt dışı</h4><p>Salaam TV, Libya: Toog Night (2021), Libya Woman Show, Libya Doctor Show (2020), Salaam TV News (2019) · Libya TV: The Voice Libya (2019) · Al Ahrar, Libya · Gem TV, İran: Diamond Game (2020), Newrouz Show (2018) · E Planet, İran · Al Kass TV, Katar (2022) · Qatar National Day (2018) · Equidia, Fransa · Channel 5, Fransa: Hypnose (2019) · Mekameleen, Mısır · Channel+ · Riot Games: ZQSD e-spor</p></div><div><h4>Mimari</h4><p>Abbate mağaza vitrinleri, İstanbul ve Ankara (2006) · Aviva standları, Çırağan Sarayı (2006) · Ford Otosan showroom, İstanbul (2006)</p></div></div></details>
+      <h3 class="subhead" id="tasarimdan-ekrana">Tasarımdan ekrana</h3>
+      <p class="scope-note" style="margin:0">Önce 3D'de tasarlıyoruz, sonra birebir kuruyoruz. Her projede solda tasarım, sağda yayındaki hali.</p>
+      <div class="t2s">
+        <figure class="pair">
+          <div class="duo">
+            <div class="ph"><img src="assets/joker-tasarim.jpg" alt="Beyaz'la Joker: 3D tasarım" loading="lazy" width="800" height="450"><span class="tag">TASARIM</span></div>
+            <div class="ph"><video src="assets/joker-yayin.mp4" poster="assets/joker-yayin.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Beyaz'la Joker: yayından görüntü"></video><button type="button" class="vbtn" data-pause="Videoyu durdur" data-play="Videoyu oynat">Videoyu durdur</button><span class="tag on">YAYIN</span></div>
+          </div>
+          <figcaption><b>Beyaz'la Joker</b><span class="mono">Kanal D · 2026</span></figcaption>
+        </figure>
+        <figure class="pair">
+          <div class="duo">
+            <div class="ph"><img src="assets/netflix-tasarim.jpg" alt="Organize Sohbetler · Beyaz Özel: 3D tasarım" loading="lazy" width="800" height="450"><span class="tag">TASARIM</span></div>
+            <div class="ph"><img src="assets/netflix-yayin.jpg" alt="Organize Sohbetler · Beyaz Özel: yayından görüntü" loading="lazy" width="800" height="450"><span class="tag on">YAYIN</span></div>
+          </div>
+          <figcaption><b>Organize Sohbetler · Beyaz Özel</b><span class="mono">Netflix · Organize İşler: Karun Hazinesi tanıtımı</span></figcaption>
+        </figure>
+        <figure class="pair">
+          <div class="duo">
+            <div class="ph"><img src="assets/kelebek-tasarim.jpg" alt="Altın Kelebek · 50. yıl: 3D tasarım" loading="lazy" width="800" height="450"><span class="tag">TASARIM</span></div>
+            <div class="ph"><img src="assets/kelebek-yayin.jpg" alt="Altın Kelebek · 50. yıl: yayından görüntü" loading="lazy" width="800" height="450"><span class="tag on">YAYIN</span></div>
+          </div>
+          <figcaption><b>Altın Kelebek · 50. yıl</b><span class="mono">Ödül töreni</span></figcaption>
+        </figure>
+        <figure class="pair">
+          <div class="duo">
+            <div class="ph"><img src="assets/cash-tasarim.jpg" alt="Cash Kitchen: 3D tasarım" loading="lazy" width="800" height="450"><span class="tag">TASARIM</span></div>
+            <div class="ph"><img src="assets/cash-yayin.jpg" alt="Cash Kitchen: yayından görüntü" loading="lazy" width="800" height="450"><span class="tag on">YAYIN</span></div>
+          </div>
+          <figcaption><b lang="en">Cash Kitchen</b><span class="mono">TV8 · Acun Medya</span></figcaption>
+        </figure>
+        <figure class="pair">
+          <div class="duo">
+            <div class="ph"><img src="assets/kimgitsin-tasarim.jpg" alt="Kim Gitsin?: 3D tasarım" loading="lazy" width="800" height="450"><span class="tag">TASARIM</span></div>
+            <div class="ph"><img src="assets/kimgitsin-yayin.jpg" alt="Kim Gitsin?: yayından görüntü" loading="lazy" width="800" height="450"><span class="tag on">YAYIN</span></div>
+          </div>
+          <figcaption><b>Kim Gitsin?</b><span class="mono">TRT 1</span></figcaption>
+        </figure>
+        <figure class="pair">
+          <div class="duo">
+            <div class="ph"><img src="assets/lingo-tasarim.jpg" alt="Lingo: 3D tasarım" loading="lazy" width="800" height="450"><span class="tag">TASARIM</span></div>
+            <div class="ph"><img src="assets/lingo-yayin.jpg" alt="Lingo: yayından görüntü" loading="lazy" width="800" height="450"><span class="tag on">YAYIN</span></div>
+          </div>
+          <figcaption><b lang="en">Lingo</b><span class="mono">TRT 1</span></figcaption>
+        </figure>
+        <figure class="pair">
+          <div class="duo">
+            <div class="ph"><img src="assets/kumbara-tasarim.jpg" alt="Kumbara: 3D tasarım" loading="lazy" width="800" height="450"><span class="tag">TASARIM</span></div>
+            <div class="ph"><img src="assets/kumbara-yayin.jpg" alt="Kumbara: yayından görüntü" loading="lazy" width="800" height="450"><span class="tag on">YAYIN</span></div>
+          </div>
+          <figcaption><b>Kumbara</b><span class="mono">NOW</span></figcaption>
+        </figure>
+        <figure class="pair">
+          <div class="duo">
+            <div class="ph"><img src="assets/turnike-tasarim.jpg" alt="Turnike: 3D tasarım" loading="lazy" width="800" height="450"><span class="tag">TASARIM</span></div>
+            <div class="ph"><img src="assets/turnike-yayin.jpg" alt="Turnike: yayından görüntü" loading="lazy" width="800" height="450"><span class="tag on">YAYIN</span></div>
+          </div>
+          <figcaption><b>Turnike</b><span class="mono">Kanal D</span></figcaption>
+        </figure>
+        <figure class="pair">
+          <div class="duo">
+            <div class="ph"><img src="assets/password-tasarim.jpg" alt="Password: 3D tasarım" loading="lazy" width="800" height="450"><span class="tag">TASARIM</span></div>
+            <div class="ph"><img src="assets/password-yayin.jpg" alt="Password: yayından görüntü" loading="lazy" width="800" height="450"><span class="tag on">YAYIN</span></div>
+          </div>
+          <figcaption><b lang="en">Password</b><span class="mono">Kanal D</span></figcaption>
+        </figure>
+        <figure class="pair">
+          <div class="duo">
+            <div class="ph"><img src="assets/butabak-tasarim.jpg" alt="Bu Tabak Kimin?: 3D tasarım" loading="lazy" width="800" height="450"><span class="tag">TASARIM</span></div>
+            <div class="ph"><img src="assets/butabak-yayin.jpg" alt="Bu Tabak Kimin?: yayından görüntü" loading="lazy" width="800" height="450"><span class="tag on">YAYIN</span></div>
+          </div>
+          <figcaption><b>Bu Tabak Kimin?</b><span class="mono">Fox TV / NOW</span></figcaption>
+        </figure>
+        <figure class="pair">
+          <div class="duo">
+            <div class="ph"><img src="assets/eplanet-tasarim.jpg" alt="E Planet TV: 3D tasarım" loading="lazy" width="800" height="450"><span class="tag">TASARIM</span></div>
+            <div class="ph"><img src="assets/eplanet-yayin.jpg" alt="E Planet TV: yayından görüntü" loading="lazy" width="800" height="450"><span class="tag on">YAYIN</span></div>
+          </div>
+          <figcaption><b lang="en">E Planet TV</b><span class="mono">İran</span></figcaption>
+        </figure>
+        <figure class="pair">
+          <div class="duo">
+            <div class="ph"><img src="assets/salam-tasarim.jpg" alt="Salam TV: 3D tasarım" loading="lazy" width="800" height="450"><span class="tag">TASARIM</span></div>
+            <div class="ph"><img src="assets/salam-kurulum.jpg" alt="Salam TV: kurulum aşaması" loading="lazy" width="800" height="450"><span class="tag on">KURULUM</span></div>
+          </div>
+          <figcaption><b lang="en">Salam TV</b><span class="mono">Libya · Kağıthane Stüdyoları</span></figcaption>
+        </figure>
+      </div>
+      <details class="arch"><summary>Tasarım arşivi: 2006’dan bugüne kanallara göre 180’den fazla stüdyo ve program</summary><div class="in"><div><h4>Kanal D</h4><p>Beyaz'la Joker (2026) · Beyaz Show (2013, 2015, 2017) · Altın Kelebek (2012, 2015, 50. yıl) · Ece Üner ile Susma · Şarkılar Bizi Söyler (2021) · Konuştukça (2020) · Neler Oluyor Hayatta (2020) · Balçiçek ile Dr. Cankurtaran (2019) · 2. Sayfa (2019) · 4 Kadın (2018) · Ben Bilmem Eşim Bilir (2012, 2018) · Çarkıfelek (2018) · Yeni Bir Ben (2018) · Gelinim Mutfakta (2018) · Kanal D Haber (2018) · Magazin D (2018) · Yaşım Kaç? (2018) · Şöhret Kafası (2018) · Çok Tatlı (2018) · Günaydın Türkiye (2017) · Renkli Sayfalar (2016) · Burada Laf Çok (2016) · Özledim Seni (2014) · Guinness Turkey (2013) · Kapış Kapış (2013) · Kaynana Gelin Seda'ya Gelin (2013) · Turnike · Password · BJK Bağış Gecesi</p></div><div><h4>Fox TV / NOW</h4><p>En İyi Ben Söylerim · Şef Akademi · Fulya ile Umudun Olsun · Bu Tabak Kimin? · Gelin Görümce · Acayip Tipler (2018) · On Numara Beş Yıldız (2017) · Gönder Gitsin (2017) · Bu Sayılmaz (2017) · Yuvamız Yıkılmasın (2017) · Kaybolan Çiçekler (2017) · Sen İste Yeter (2017) · Fox Haber (2013) · Su Gibi (2013) · Yeni Bir Umut (2013) · Kamuflaj (2012)</p></div><div><h4>Star TV</h4><p>Var mısın Yok musun (2016) · Alelade Show · Çarkıfelek (2015) · Patron (2015) · Ben Olsam (2015) · Evleneceksen Gel (2015) · Dada (2015) · Miss Turkey (2007) · Ünlüler Sirki (2007) · Star Haber Merkezi (2006) · Objektif (2006) · Deşifre (2006) · Son Ütücü (2006) · Anında Görüntü (2006) · Deniz Akkaya ile Top Model (2006) · Cleaver (2006)</p></div><div><h4>Show TV</h4><p>Kapışma (2015) · Show TV Ana Haber (2013) · Show Kulüp (2013) · Show Gece Magazin (2013) · Hayata Dokunmak Gerek (2013) · Makina Kafa (2013) · Kelime Oyunu (2013) · Bülent Ersoy Show (2013) · Yurdum İnsanı (2013) · Şeflerin Düellosu (2012)</p></div><div><h4>TRT</h4><p>TRT 1: Kim Gitsin? · Sen Türkülerini Söyle · Seneye Bu Zamanlar (2020) · Acemi Anneler (2020) · Aileler Yarışıyor (2018) · İyi Fikir (2018) · Altın Petek (2016) · İlk Baskı (2013) — TRT Haber: haber stüdyosu (2017), Bi Fikrin mi Var? (2017) — TRT Spor: Doğan Kasaroğlu (2017) — TRT Kurdî haber stüdyosu (2016) — TRT Arabi stüdyosu (2014) — TRT Diyanet stüdyosu (2014)</p></div><div><h4>TV8</h4><p>O Ses Türkiye (2014) · Hülya Avşar Show (2014) · Anlatacaklarım Var (2013) · Aramızda Kalsın (2013) · Canım Doktor (2013) · Her Pazar (2013) · Bir Ses Bir Nefes (2013) · Aşka Gel (2013)</p></div><div><h4>Habertürk · Haber Global · A Haber · TGRT · 24 TV · CNN Türk · Sky Türk</h4><p>Habertürk haber stüdyosu, Fatih Altaylı, HT Beyin (2013) · Haber Global: 40, stüdyo (2019) · A Haber: haber bülteni (2020), spor stüdyosu (2014) · TGRT Haber stüdyosu · TGRT Europe · 24 TV stüdyoları (2013) · CNN Türk: 5N1K (2007) · Sky Türk haber merkezi (2006)</p></div><div><h4>360 TV</h4><p>Benim Yemeğim (2021) · haber stüdyosu (2016) · Her Şey Dahil (2016) · Elifnağme (2016) · Telegol (2016) · Yeşim Salkım ile Yeni Ben (2016)</p></div><div><h4>beIN</h4><p>beIN Sports Türkiye · Doha stüdyoları · Dünya Kupası 2018 (Rusya) · Dünya Kupası 2022: Capsule ve Corniche projeleri, Katar Spor Müzesi · Kolaysa Anlat (2020) · stadyumlar ve masalar (2019) · Şampiyonlar Ligi (2018) · Asya Oyunları, Katar (2018) · beIN Comedy: Kaan Sekban'la Bi Kahve (2020), Comedy Max · beIN Gurme: Mutlu Mutfak (2020), İki Şekerli Bir Sade (2017), Bıçağın İki Yüzü, Şefin Dünyası · beIN TV: Miami Radio Show, ABD (2018)</p></div><div><h4>Spor kanalları</h4><p>Lig TV: Oscar (2015), Lig TV 2 stüdyosu (2012), Maraton (2007) · GS TV stüdyoları (2012, 2018) · TJK TV stüdyoları (2016) · S Sport: S Sport Radyo (2017), Saran · Kanal 1: Telegol (2007) · Turkmax Gurme: Bıçağın İki Yüzü, Lezzetli Sohbetler, Şef Hazel (2016)</p></div><div><h4>Diğer kanallar ve platformlar</h4><p>Netflix: Organize Sohbetler – Beyaz Özel (Organize İşler: Karun Hazinesi) · Diyanet TV tüm stüdyolar (2013) · Milli Piyango TV (2020) · Exxen: Enis Arıkan (2020), Kaan Sekban'la Alt Tarafı Bi' Talk Show · Gain: Mirgün Cabas (2021) · CNBC-e: Letterbox · Nickelodeon (2017) · MTV Türkiye stüdyosu (2006) · Dream TV: Dream Genç İz, Dream Evdeki Ses (2013) · İBB stüdyosu (2017) · YouTube: Göster Kendini (2021), BJK Bırakmam Seni (2020), Mey (2019), Bide Bunu İzle (2019) · Milliyet Gillette Yılın Sporcusu Ödülleri · Cash Kitchen · İbo Show Yılbaşı 2022</p></div><div><h4>Yurt dışı</h4><p>Salaam TV, Libya: Toog Night (2021), Libya Woman Show, Libya Doctor Show (2020), Salaam TV News (2019) · Libya TV: The Voice Libya (2019) · Al Ahrar, Libya · Gem TV, İran: Diamond Game (2020), Newrouz Show (2018) · E Planet, İran · Al Kass TV, Katar (2022) · Qatar National Day (2018) · Equidia, Fransa · Channel 5, Fransa: Hypnose (2019) · Mekameleen, Mısır · Channel+ · Riot Games: ZQSD e-spor</p></div><div><h4>Mimari</h4><p>Abbate mağaza vitrinleri, İstanbul ve Ankara (2006) · Aviva standları, Çırağan Sarayı (2006) · Ford Otosan showroom, İstanbul (2006)</p></div></div></details>
     </div>
   </section>
 
@@ -604,7 +725,7 @@ footer a{color:var(--muted)}
         </div>
         <div>
           <h3>Etkinlikler ve programlar</h3>
-          <div class="chips" role="list"><span role="listitem" lang="en">Lingo <small class="ch">TRT 1</small></span><span role="listitem">Kumbara <small class="ch">NOW</small></span><span role="listitem">En İyi Ben Söylerim <small class="ch">NOW</small></span><span role="listitem">Süperstar Aile <small class="ch">Star TV</small></span><span role="listitem">Kim Bunlar <small class="ch">TRT Müzik</small></span><span role="listitem">Yetenek Sizsiniz <small class="ch">Show TV</small></span><span role="listitem">Yarı Yarıya <small class="ch">ATV</small></span><span role="listitem">Kazan Kazan <small class="ch">ATV</small></span><span role="listitem">Gelinim Mutfakta <small class="ch">Kanal D</small></span><span role="listitem">Şef Akademi <small class="ch">NOW</small></span><span role="listitem" lang="en">X Factor <small class="ch">Kanal D</small></span><span role="listitem">Şarkı Söylemek Lazım <small class="ch">Show TV</small></span><span role="listitem">Ece Üner ile Susma <small class="ch">Kanal D</small></span><span role="listitem">Gelin Görümce <small class="ch">NOW</small></span><span role="listitem">Turnike <small class="ch">ATV</small></span><span role="listitem">Kim Gitsin? <small class="ch">TRT 1</small></span><span role="listitem">Kapanmadan Kazan <small class="ch">ATV</small></span><span role="listitem">Katar Asya Futbol Oyunları</span><span role="listitem">Riot Games e-spor projesi</span><span role="listitem">Altın Kelebek Ödülleri <small class="ch">Kanal D</small></span><span role="listitem">Afife Jale Tiyatro Ödülleri <small class="ch">Devlet Tiyatroları</small></span><span role="listitem">O Ses Türkiye <small class="ch">TV8 · Show TV</small></span><span role="listitem">Var mısın Yok musun <small class="ch">Show TV</small></span><span role="listitem">Çarkıfelek <small class="ch">Kanal D · Show TV · Star TV</small></span><span role="listitem">Buzda Dans <small class="ch">Show TV</small></span><span role="listitem">Bu Tarz Benim <small class="ch">Show TV</small></span><span role="listitem">Para Odası <small class="ch">ATV · Kanal D</small></span><span role="listitem">Aileler Yarışıyor <small class="ch">360 · TRT 1</small></span><span role="listitem">Bir Şarkısın Sen <small class="ch">ATV</small></span><span role="listitem">Güven Bana <small class="ch">ATV</small></span><span role="listitem">Canlı Para <small class="ch">Show TV</small></span><span role="listitem">Ben Bilmem Eşim Bilir <small class="ch">Kanal D</small></span><span role="listitem">Ben Buradan Atlarım <small class="ch">Show TV</small></span><span role="listitem">Biri Bana Gelsin <small class="ch">Show TV</small></span><span role="listitem">Mercedes tanıtımı</span><span role="listitem">Beymen lansmanı</span><span role="listitem">Cebit</span><span role="listitem">İstanbul Avrupa Spor Başkenti</span><span role="listitem">Cumhurbaşkanlığı Bisiklet Turu</span></div>
+          <div class="chips" role="list"><span role="listitem" lang="en">Lingo <small class="ch">TRT 1</small></span><span role="listitem">Kumbara <small class="ch">NOW</small></span><span role="listitem">En İyi Ben Söylerim <small class="ch">NOW</small></span><span role="listitem">Süperstar Aile <small class="ch">Star TV</small></span><span role="listitem">Kim Bunlar <small class="ch">TRT Müzik</small></span><span role="listitem">Yetenek Sizsiniz <small class="ch">Show TV</small></span><span role="listitem">Yarı Yarıya <small class="ch">ATV</small></span><span role="listitem">Kazan Kazan <small class="ch">ATV</small></span><span role="listitem">Gelinim Mutfakta <small class="ch">Kanal D</small></span><span role="listitem">Şef Akademi <small class="ch">NOW</small></span><span role="listitem" lang="en">X Factor <small class="ch">Kanal D</small></span><span role="listitem">Şarkı Söylemek Lazım <small class="ch">Show TV</small></span><span role="listitem">Ece Üner ile Susma <small class="ch">Kanal D</small></span><span role="listitem">Gelin Görümce <small class="ch">NOW</small></span><span role="listitem">Turnike <small class="ch">Kanal D</small></span><span role="listitem">Kim Gitsin? <small class="ch">TRT 1</small></span><span role="listitem">Beyaz'la Joker <small class="ch">Kanal D</small></span><span role="listitem">Organize Sohbetler · Beyaz Özel <small class="ch">Netflix</small></span><span role="listitem" lang="en">Password <small class="ch">Kanal D</small></span><span role="listitem">Bu Tabak Kimin? <small class="ch">Fox TV / NOW</small></span><span role="listitem" lang="en">Cash Kitchen <small class="ch">TV8</small></span><span role="listitem">Kapanmadan Kazan <small class="ch">ATV</small></span><span role="listitem">Katar Asya Futbol Oyunları</span><span role="listitem">Riot Games e-spor projesi</span><span role="listitem">Altın Kelebek Ödülleri <small class="ch">Kanal D</small></span><span role="listitem">Afife Jale Tiyatro Ödülleri <small class="ch">Devlet Tiyatroları</small></span><span role="listitem">O Ses Türkiye <small class="ch">TV8 · Show TV</small></span><span role="listitem">Var mısın Yok musun <small class="ch">Show TV</small></span><span role="listitem">Çarkıfelek <small class="ch">Kanal D · Show TV · Star TV</small></span><span role="listitem">Buzda Dans <small class="ch">Show TV</small></span><span role="listitem">Bu Tarz Benim <small class="ch">Show TV</small></span><span role="listitem">Para Odası <small class="ch">ATV · Kanal D</small></span><span role="listitem">Aileler Yarışıyor <small class="ch">360 · TRT 1</small></span><span role="listitem">Bir Şarkısın Sen <small class="ch">ATV</small></span><span role="listitem">Güven Bana <small class="ch">ATV</small></span><span role="listitem">Canlı Para <small class="ch">Show TV</small></span><span role="listitem">Ben Bilmem Eşim Bilir <small class="ch">Kanal D</small></span><span role="listitem">Ben Buradan Atlarım <small class="ch">Show TV</small></span><span role="listitem">Biri Bana Gelsin <small class="ch">Show TV</small></span><span role="listitem">Mercedes tanıtımı</span><span role="listitem">Beymen lansmanı</span><span role="listitem">Cebit</span><span role="listitem">İstanbul Avrupa Spor Başkenti</span><span role="listitem">Cumhurbaşkanlığı Bisiklet Turu</span></div>
         </div>
         <div>
           <h3>Yapım şirketleri</h3>
@@ -615,8 +736,8 @@ footer a{color:var(--muted)}
           <div class="chips" role="list"><span role="listitem">UEFA</span><span role="listitem">Ferrari</span><span role="listitem">Vodafone</span><span role="listitem">ING Bank</span><span role="listitem">Mercedes-Benz</span><span role="listitem">Turkcell</span><span role="listitem">Apple</span><span role="listitem">Roche</span><span role="listitem">Oriflame</span><span role="listitem">Swatch</span><span role="listitem">Puma</span><span role="listitem">Mazda</span><span role="listitem">Eczacıbaşı VitrA</span><span role="listitem">Akbank</span><span role="listitem">Abdi İbrahim</span><span role="listitem">Nokia</span><span role="listitem">L'Oréal</span><span role="listitem">DHL</span><span role="listitem">Sabiha Gökçen</span><span role="listitem">Galatasaray</span><span role="listitem">Fenerbahçe</span><span role="listitem">Trabzonspor</span><span role="listitem">TFF</span></div>
         </div>
       </div>
-      <details class="arch"><summary>Program arşivi: kanallara göre 107 program daha</summary><div class="in"><div><h4>Show TV</h4><p>Seda ve Uğur'la Artık Susma · Çocuktan Al Haberi · Bir Sorun mu Var · Best Model of the World · Yeni Bir Hayat · Piramit · Kapışma · Evleneceksen Gel · Yaparım Bilirsin · Adam Asmaca · En Büyük Show · Şeflerin Düellosu · Türklerin Uzayla İmtihanı · Bugün Ne Giysem · Pazar Sürprizi · Cumartesi Sürprizi · Huysuz'la Dansa Davet · Huysuz'la Dans Eder misin · Seren'le Evlenir misin · Yok Böyle Dans · Volkan Konak · Sabahın Sedası · Kuzeyin Oğlu · Devler Ligi · Korolar Çarpışıyor · Siyaset Meydanı · Benim Annem Dans Edemez · Can Dostum · Güzel ve Dahi · Bak Kim Dans Ediyor · Show TV İftar · Survivor Finali (KKTC)</p></div><div><h4>Fox TV</h4><p>Kaybolan Çiçekler · Her Şey Gerçek · Sen İste Yeter · Ne Seninle Ne Sensiz · Bu Sayılmaz · Gelinim Sensin · Esra Erol · Kamuflaj · Tabu · Yaş Onbeş · M. Ali Erbil'le 50 Sarışın · Roman Star · Kick Box · Ring Master Kick Box · Benimle Dans Eder misin · Söyle ve Kazan</p></div><div><h4>ATV</h4><p>3 Kuşak 1 Cevap · Elin Oğlu · Döndür Şansını · En Sevdiğim 3 Şarkı · Takip · Harry · Kaç Para · Ahmet Çakar'la Zor Karar · İbo Show · Huysuz'la Görücü Usulü · Gülben Ergen Show · Profesyonel</p></div><div><h4>Star TV</h4><p>Ben Olsam · Patron · Vay Arkadaş · Artiz Mektebi · Passaparola · Çal Kalbimi · Kimsin Sen · Birimiz Hepimiz İçin · İbo Show · Zuhal Topal'la İzdivaç · Ucunda Milyon Var · Rapstar · Popstar · Hayalin İçin Söyle · İbrahim Tatlıses Yılbaşı Özel</p></div><div><h4>Kanal D</h4><p>Sihirli Tuşlar</p></div><div><h4>TRT 1</h4><p>Kolaysa Sen Yap · Kadir Çöpdemir ile Koptu Geliyor · Eurovision Gecesi · Yıldızım Sensin · Stadyum · Birimiz İkimiz İçin</p></div><div><h4>TRT</h4><p>Kuyruk · Hayatın Musikisi · Formula</p></div><div><h4>TRT Müzik</h4><p>Züleyha ile Gelin Kınası · Bizim Nikâh Şarkılarımız</p></div><div><h4>TRT Haber</h4><p>Bir Fikrin mi Var</p></div><div><h4>TRT Okul</h4><p>Ömer Ekinci ile Gençler Uçuyor · Kontrol Sende</p></div><div><h4>TRT 3</h4><p>Son Basamak</p></div><div><h4>TRT Arapça</h4><p>Türkiye Buluşmaları · Acılar ve Ümitler</p></div><div><h4>TRT Avaz</h4><p>11. Türkçe Olimpiyatları açılış töreni</p></div><div><h4>Diyanet TV</h4><p>Mevlid Kandili · Diyanet TV İftar · Vav Çocuk</p></div><div><h4>Kanal 7</h4><p>Anlat Bakalım · Fatih–Şebnem Kısaparmak</p></div><div><h4>Kanal 1</h4><p>Miss Turkey · Tele Pazar · Mucizeler Gecesi</p></div><div><h4>Show Türk</h4><p>Erkan Çelik Show</p></div><div><h4>beIN TV</h4><p>beIN FC Türkiye</p></div><div><h4>TNT</h4><p>İzdivaç</p></div><div><h4>NTV</h4><p>23 Nisan Çocuk Programı</p></div><div><h4>TV filmi</h4><p>Hırçın Kız Kadife</p></div></div></details>
-      <details class="arch"><summary>Etkinlik arşivi</summary><div class="in"><p>UEFA Kupası finali, İstanbul · Formula 1 Ferrari tanıtımı · Oprah Winfrey organizasyonu, Çırağan Sarayı · Dünya Su Forumu, Başbakanlık · Kraliyet Sarayı organizasyonu, Ürdün · Rihanna ve Santana konserleri, Kuruçeşme Arena · DJ Tiësto, CNR Expo · Şebnem Ferah turnesi · Seda Sayan, Ebru Gündeş, Mustafa Ceceli, Hadise konserleri · 10. ve 11. Türkçe Olimpiyatları · Dünya Takımlar Judo Şampiyonası, Antalya · FITA Okçuluk Dünya Kupası, Antalya · TFF 1. Lig ödül töreni · Uluslararası Çeşme Şarkı Yarışması · White Fest, Uludağ · Dolmabahçe Sarayı etkinliği · Rahmi M. Koç Müzesi defilesi · İstanbul Forum Guinness rekoru · Vodafone FreeZone Liselerarası Müzik Yarışması · Show TV yeni yayın dönemi gecesi · Elveda Rumeli sezon finali · Apple – Bilkom konferansı, Santral İstanbul · Turkcell, Avea ve Nokia tanıtımları · Roche, Abdi İbrahim ve MSD lansman ve konferansları · Oriflame, L'Oréal, Swatch ve Puma lansmanları · Mazda ve Mercedes kamyon lansmanları · Eczacıbaşı VitrA lansmanı · Akbank müdürler vizyon toplantısı · Trabzonspor ve Samsunspor sezon açılış törenleri · Trabzonspor basketbol şampiyonluk kutlamaları</p></div></details>
+      <details class="arch"><summary>Program arşivi: kanallara göre 107 program daha</summary><div class="in"><div><h4>Show TV</h4><p>Seda ve Uğur'la Artık Susma · Çocuktan Al Haberi · Bir Sorun mu Var · Best Model of the World · Yeni Bir Hayat · Piramit · Kapışma · Evleneceksen Gel · Yaparım Bilirsin · Adam Asmaca · En Büyük Show · Şeflerin Düellosu · Türklerin Uzayla İmtihanı · Bugün Ne Giysem · Pazar Sürprizi · Cumartesi Sürprizi · Huysuz'la Dansa Davet · Huysuz'la Dans Eder misin · Seren'le Evlenir misin · Yok Böyle Dans · Volkan Konak · Sabahın Sedası · Kuzeyin Oğlu · Devler Ligi · Korolar Çarpışıyor · Siyaset Meydanı · Benim Annem Dans Edemez · Can Dostum · Güzel ve Dahi · Bak Kim Dans Ediyor · Show TV İftar · Survivor Finali (KKTC)</p></div><div><h4>Fox TV</h4><p>Kaybolan Çiçekler · Her Şey Gerçek · Sen İste Yeter · Ne Seninle Ne Sensiz · Bu Sayılmaz · Gelinim Sensin · Esra Erol · Kamuflaj · Tabu · Yaş Onbeş · M. Ali Erbil'le 50 Sarışın · Roman Star · Kick Box · Ring Master Kick Box · Benimle Dans Eder misin · Söyle ve Kazan</p></div><div><h4>ATV</h4><p>3 Kuşak 1 Cevap · Elin Oğlu · Döndür Şansını · En Sevdiğim 3 Şarkı · Takip · Harry · Kaç Para · Ahmet Çakar'la Zor Karar · İbo Show · Huysuz'la Görücü Usulü · Gülben Ergen Show · Profesyonel</p></div><div><h4>Star TV</h4><p>Ben Olsam · Patron · Vay Arkadaş · Artiz Mektebi · Passaparola · Çal Kalbimi · Kimsin Sen · Birimiz Hepimiz İçin · İbo Show · Zuhal Topal'la İzdivaç · Ucunda Milyon Var · Rapstar · Popstar · Hayalin İçin Söyle · İbrahim Tatlıses Yılbaşı Özel</p></div><div><h4>Kanal D</h4><p>Sihirli Tuşlar</p></div><div><h4>TRT 1</h4><p>Kolaysa Sen Yap · Kadir Çöpdemir ile Koptu Geliyor · Eurovision Gecesi · Yıldızım Sensin · Stadyum · Birimiz İkimiz İçin</p></div><div><h4>TRT</h4><p>Kuyruk · Hayatın Musikisi · Formula</p></div><div><h4>TRT Müzik</h4><p>Züleyha ile Gelin Kınası · Bizim Nikâh Şarkılarımız</p></div><div><h4>TRT Haber</h4><p>Bir Fikrin mi Var</p></div><div><h4>TRT Okul</h4><p>Ömer Ekinci ile Gençler Uçuyor · Kontrol Sende</p></div><div><h4>TRT 3</h4><p>Son Basamak</p></div><div><h4>TRT Arapça</h4><p>Türkiye Buluşmaları · Acılar ve Ümitler</p></div><div><h4>Diyanet TV</h4><p>Mevlid Kandili · Diyanet TV İftar · Vav Çocuk</p></div><div><h4>Kanal 7</h4><p>Anlat Bakalım · Fatih–Şebnem Kısaparmak</p></div><div><h4>Kanal 1</h4><p>Miss Turkey · Tele Pazar · Mucizeler Gecesi</p></div><div><h4>Show Türk</h4><p>Erkan Çelik Show</p></div><div><h4>beIN TV</h4><p>beIN FC Türkiye</p></div><div><h4>TNT</h4><p>İzdivaç</p></div><div><h4>NTV</h4><p>23 Nisan Çocuk Programı</p></div><div><h4>TV filmi</h4><p>Hırçın Kız Kadife</p></div></div></details>
+      <details class="arch"><summary>Etkinlik arşivi</summary><div class="in"><p>UEFA Kupası finali, İstanbul · Formula 1 Ferrari tanıtımı · Oprah Winfrey organizasyonu, Çırağan Sarayı · Dünya Su Forumu, Başbakanlık · Kraliyet Sarayı organizasyonu, Ürdün · Rihanna ve Santana konserleri, Kuruçeşme Arena · DJ Tiësto, CNR Expo · Şebnem Ferah turnesi · Seda Sayan, Ebru Gündeş, Mustafa Ceceli, Hadise konserleri · Dünya Takımlar Judo Şampiyonası, Antalya · FITA Okçuluk Dünya Kupası, Antalya · TFF 1. Lig ödül töreni · Uluslararası Çeşme Şarkı Yarışması · White Fest, Uludağ · Dolmabahçe Sarayı etkinliği · Rahmi M. Koç Müzesi defilesi · İstanbul Forum Guinness rekoru · Vodafone FreeZone Liselerarası Müzik Yarışması · Show TV yeni yayın dönemi gecesi · Elveda Rumeli sezon finali · Apple – Bilkom konferansı, Santral İstanbul · Turkcell, Avea ve Nokia tanıtımları · Roche, Abdi İbrahim ve MSD lansman ve konferansları · Oriflame, L'Oréal, Swatch ve Puma lansmanları · Mazda ve Mercedes kamyon lansmanları · Eczacıbaşı VitrA lansmanı · Akbank müdürler vizyon toplantısı · Trabzonspor ve Samsunspor sezon açılış törenleri · Trabzonspor basketbol şampiyonluk kutlamaları</p></div></details>
     </div>
   </section>
 
@@ -743,6 +864,25 @@ footer a{color:var(--muted)}
       .then(function(j){if(j&&j.success){f.reset();st.textContent=f.getAttribute('data-ok');}else{st.textContent=f.getAttribute('data-err');}})
       .catch(function(){st.textContent=f.getAttribute('data-err');})
       .then(function(){b.disabled=false;});
+  });
+})();
+
+(function(){
+  var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  [].forEach.call(document.querySelectorAll('.ph video'),function(v){
+    var b=v.parentNode.querySelector('.vbtn');
+    function lab(){b.textContent=v.paused?b.getAttribute('data-play'):b.getAttribute('data-pause');}
+    if(rm){v.pause();v.removeAttribute('autoplay');}
+    b.addEventListener('click',function(){if(v.paused){v.play();}else{v.pause();}});
+    v.addEventListener('play',lab);v.addEventListener('pause',lab);lab();
+  });
+  [].forEach.call(document.querySelectorAll('.yt button'),function(b){
+    b.addEventListener('click',function(){
+      var f=document.createElement('iframe');
+      f.src='https://www.youtube-nocookie.com/embed/'+b.getAttribute('data-id')+'?autoplay=1&rel=0';
+      f.title=b.getAttribute('data-title');f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;
+      b.parentNode.replaceChild(f,b);f.focus();
+    });
   });
 })();
 </script>
