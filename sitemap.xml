@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.tvs.com.tr/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.tvs.com.tr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tvs.com.tr/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.tvs.com.tr/es"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.tvs.com.tr/ar"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://www.tvs.com.tr/fa"/>
+  </url>
+  <url>
+    <loc>https://www.tvs.com.tr/en</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.tvs.com.tr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tvs.com.tr/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.tvs.com.tr/es"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.tvs.com.tr/ar"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://www.tvs.com.tr/fa"/>
+  </url>
+  <url>
+    <loc>https://www.tvs.com.tr/es</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.tvs.com.tr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tvs.com.tr/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.tvs.com.tr/es"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.tvs.com.tr/ar"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://www.tvs.com.tr/fa"/>
+  </url>
+  <url>
+    <loc>https://www.tvs.com.tr/ar</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.tvs.com.tr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tvs.com.tr/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.tvs.com.tr/es"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.tvs.com.tr/ar"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://www.tvs.com.tr/fa"/>
+  </url>
+  <url>
+    <loc>https://www.tvs.com.tr/fa</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.tvs.com.tr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tvs.com.tr/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.tvs.com.tr/es"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.tvs.com.tr/ar"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://www.tvs.com.tr/fa"/>
+  </url>
+</urlset>
