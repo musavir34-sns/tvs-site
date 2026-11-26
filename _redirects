@@ -31,3 +31,8 @@
 /hakkimizda/  /  301
 /referanslar  /#referanslar  301
 /referanslar/  /#referanslar  301
+/refer/*  /#referanslar  301
+/refer  /#referanslar  301
+/portfolio/*  /#portfolyo  301
+/project/*  /#portfolyo  301
+/projects/*  /#portfolyo  301
